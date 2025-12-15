@@ -1,0 +1,130 @@
+Project Name: QuantumCusp
+Domain: quantumcusp.co
+Industry: Technology, Digital Solutions, Business Growth, AI-Enabled Tools
+
+Goal:
+Create a modern, professional, and confident startup website for a technology company named QuantumCusp.
+The website should establish trust, clarity, and long-term credibility for businesses, startups, and enterprises.
+
+Brand Positioning:
+QuantumCusp helps businesses grow using smart digital solutions, scalable technology, and AI where it creates real value.
+The brand is not AI-only hype — it is strategic, reliable, and future-ready.
+
+Tone & Style:
+
+Professional
+
+Confident (not aggressive)
+
+Clean and modern
+
+Enterprise-friendly
+
+Minimal but premium
+
+Clear, simple language
+
+Visual Theme:
+
+Dark or light neutral background (charcoal, deep blue, or soft white)
+
+Accent color: electric blue / teal / subtle violet
+
+Plenty of whitespace
+
+Smooth transitions and micro-animations
+
+Modern sans-serif font (Inter, Poppins, or similar)
+
+Homepage Structure:
+
+1. Hero Section
+
+Strong headline focused on business growth and technology
+
+Sub-headline explaining digital + AI-enabled solutions
+
+Primary CTA: “Get Started” or “Talk to Us”
+
+Example copy idea:
+“Smart Technology. Real Business Growth.”
+Digital solutions and AI-enabled tools designed to scale modern businesses.
+
+2. What We Do
+
+Clearly explain services such as:
+
+Digital Product Development
+
+Business Automation
+
+AI-Enabled Tools (used where they add value)
+
+SaaS & Platform Solutions
+
+Growth & Optimization Services
+
+3. Why QuantumCusp
+
+Highlight:
+
+Strategic thinking
+
+Practical AI adoption
+
+Scalable architecture
+
+Business-first approach
+
+Long-term partnerships
+
+4. Solutions / Use Cases
+
+Show how QuantumCusp helps:
+
+Startups
+
+Growing businesses
+
+Enterprises
+Focus on outcomes, not buzzwords.
+
+5. About Us
+
+Brief, confident introduction:
+QuantumCusp is a technology company focused on helping businesses operate smarter, grow faster, and prepare for the future.
+
+6. Call to Action
+
+Invite users to:
+
+Book a consultation
+
+Contact the team
+
+Start a project
+
+7. Footer
+
+Company name: QuantumCusp
+
+Tagline
+
+Contact email
+
+Social links (placeholders)
+
+Technical Requirements:
+
+Responsive (desktop, tablet, mobile)
+
+Fast loading
+
+SEO-friendly structure
+
+Clean, modular components
+
+Production-ready layout
+
+Overall Feel:
+The site should feel like a serious technology company that clients can trust for long-term digital and growth solutions.
