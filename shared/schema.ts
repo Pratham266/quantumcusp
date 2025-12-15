@@ -30,3 +30,38 @@ export const insertContactSchema = createInsertSchema(contactSubmissions).omit({
 
 export type InsertContact = z.infer<typeof insertContactSchema>;
 export type ContactSubmission = typeof contactSubmissions.$inferSelect;
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  category: string;
+  readTime: string;
+  publishedAt: string;
+  featured: boolean;
+}
+
+export interface CaseStudy {
+  id: string;
+  slug: string;
+  title: string;
+  client: string;
+  industry: string;
+  challenge: string;
+  solution: string;
+  results: string[];
+  metrics: { label: string; value: string }[];
+  testimonial?: { quote: string; author: string; role: string };
+}
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  bio: string;
+  expertise: string[];
+  linkedin?: string;
+}

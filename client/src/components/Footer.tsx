@@ -1,10 +1,12 @@
+import { Link } from "wouter";
 import { SiLinkedin, SiX, SiGithub } from "react-icons/si";
 
 const quickLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/#services", isAnchor: true },
+  { label: "Solutions", href: "/#solutions", isAnchor: true },
+  { label: "Case Studies", href: "/case-studies", isAnchor: false },
+  { label: "Blog", href: "/blog", isAnchor: false },
+  { label: "Team", href: "/team", isAnchor: false },
 ];
 
 const socialLinks = [
@@ -14,10 +16,14 @@ const socialLinks = [
 ];
 
 export function Footer() {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const handleAnchorClick = (href: string) => {
+    if (window.location.pathname !== "/") {
+      window.location.href = href;
+    } else {
+      const element = document.querySelector(href.replace("/", ""));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -26,12 +32,12 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <Link href="/" className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-md bg-primary flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-lg">Q</span>
               </div>
               <span className="font-bold text-xl tracking-tight">QuantumCusp</span>
-            </div>
+            </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6" data-testid="text-footer-tagline">
               Smart technology solutions for modern businesses. Strategic, reliable,
               and future-ready.
@@ -56,13 +62,23 @@ export function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    data-testid={`link-footer-${link.label.toLowerCase()}`}
-                  >
-                    {link.label}
-                  </button>
+                  {link.isAnchor ? (
+                    <button
+                      onClick={() => handleAnchorClick(link.href)}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -84,6 +100,15 @@ export function Footer() {
                 <span className="text-sm text-muted-foreground" data-testid="text-footer-domain">
                   quantumcusp.co
                 </span>
+              </li>
+              <li>
+                <Link
+                  href="/estimator"
+                  className="text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+                  data-testid="link-footer-estimator"
+                >
+                  Get a Project Quote
+                </Link>
               </li>
             </ul>
           </div>

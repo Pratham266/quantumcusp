@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/#services", isAnchor: true },
+  { label: "Solutions", href: "/#solutions", isAnchor: true },
+  { label: "Case Studies", href: "/case-studies", isAnchor: false },
+  { label: "Blog", href: "/blog", isAnchor: false },
+  { label: "Team", href: "/team", isAnchor: false },
 ];
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,12 +25,31 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleNavClick = (href: string, isAnchor: boolean) => {
     setIsMobileMenuOpen(false);
+    
+    if (isAnchor) {
+      if (location !== "/") {
+        window.location.href = href;
+      } else {
+        const element = document.querySelector(href.replace("/", ""));
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }
+  };
+
+  const handleGetStarted = () => {
+    setIsMobileMenuOpen(false);
+    if (location !== "/") {
+      window.location.href = "/#contact";
+    } else {
+      const element = document.querySelector("#contact");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   };
 
   return (
@@ -40,35 +61,44 @@ export function Navigation() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-8">
-        <button
-          onClick={() => scrollToSection("#hero")}
-          className="flex items-center gap-2"
-          data-testid="link-logo"
-        >
+        <Link href="/" className="flex items-center gap-2" data-testid="link-logo">
           <div className="w-10 h-10 rounded-md bg-primary flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-lg">Q</span>
           </div>
           <span className="font-bold text-xl tracking-tight">QuantumCusp</span>
-        </button>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <button
-              key={link.href}
-              onClick={() => scrollToSection(link.href)}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              data-testid={`link-nav-${link.label.toLowerCase().replace(" ", "-")}`}
-            >
-              {link.label}
-            </button>
-          ))}
+          {navLinks.map((link) =>
+            link.isAnchor ? (
+              <button
+                key={link.href}
+                onClick={() => handleNavClick(link.href, link.isAnchor)}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                data-testid={`link-nav-${link.label.toLowerCase().replace(" ", "-")}`}
+              >
+                {link.label}
+              </button>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                data-testid={`link-nav-${link.label.toLowerCase().replace(" ", "-")}`}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </div>
 
-        <div className="hidden md:block">
-          <Button
-            onClick={() => scrollToSection("#contact")}
-            data-testid="button-get-started"
-          >
+        <div className="hidden md:flex items-center gap-3">
+          <Link href="/estimator">
+            <Button variant="outline" data-testid="button-get-quote">
+              Get a Quote
+            </Button>
+          </Link>
+          <Button onClick={handleGetStarted} data-testid="button-get-started">
             Get Started
           </Button>
         </div>
@@ -93,19 +123,41 @@ export function Navigation() {
             className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border"
           >
             <div className="px-6 py-4 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollToSection(link.href)}
-                  className="text-left text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
-                  data-testid={`link-mobile-nav-${link.label.toLowerCase().replace(" ", "-")}`}
+              {navLinks.map((link) =>
+                link.isAnchor ? (
+                  <button
+                    key={link.href}
+                    onClick={() => handleNavClick(link.href, link.isAnchor)}
+                    className="text-left text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                    data-testid={`link-mobile-nav-${link.label.toLowerCase().replace(" ", "-")}`}
+                  >
+                    {link.label}
+                  </button>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    data-testid={`link-mobile-nav-${link.label.toLowerCase().replace(" ", "-")}`}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
+              <Link href="/estimator">
+                <Button
+                  variant="outline"
+                  className="w-full mt-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  data-testid="button-mobile-get-quote"
                 >
-                  {link.label}
-                </button>
-              ))}
+                  Get a Quote
+                </Button>
+              </Link>
               <Button
-                onClick={() => scrollToSection("#contact")}
-                className="w-full mt-2"
+                onClick={handleGetStarted}
+                className="w-full"
                 data-testid="button-mobile-get-started"
               >
                 Get Started
