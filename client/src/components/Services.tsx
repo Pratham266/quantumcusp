@@ -92,15 +92,14 @@ export function Services() {
         >
           {services.map((service, index) => (
             <motion.div key={service.title} variants={itemVariants}>
-              <Card
-                className="h-full hover-elevate transition-all duration-300"
-                data-testid={`card-service-${index}`}
-              >
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center mb-4">
+              <Card className="group relative overflow-hidden h-full bg-gradient-to-br from-primary/5 via-secondary/10 to-accent/10 hover:shadow-lg hover:-translate-y-1 hover:border-primary/40 hover:ring-1 hover:ring-primary/20 hover-elevate transition-all duration-300">
+                <CardContent className="p-6 lg:p-7">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 ring-1 ring-primary/20 flex items-center justify-center mb-4 transition-colors group-hover:bg-primary/15 group-hover:ring-primary/40">
                     <service.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
+                  <h3 className="text-lg font-semibold tracking-tight mb-1">
+                    {service.title}
+                  </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {service.description}
                   </p>

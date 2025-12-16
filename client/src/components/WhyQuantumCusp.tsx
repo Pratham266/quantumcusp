@@ -51,9 +51,10 @@ export function WhyQuantumCusp() {
               <span className="text-primary">Drives Results</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              We're not just technology providers — we're strategic partners committed
-              to your long-term success. Our approach combines deep technical expertise
-              with a genuine understanding of business challenges.
+              We're not just technology providers — we're strategic partners
+              committed to your long-term success. Our approach combines deep
+              technical expertise with a genuine understanding of business
+              challenges.
             </p>
             <ul className="space-y-4">
               {benefits.map((benefit, index) => (
@@ -89,13 +90,15 @@ export function WhyQuantumCusp() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                className="p-6 rounded-lg bg-background border border-border"
+                className="group relative p-6 rounded-xl bg-gradient-to-br from-background to-muted/50 border border-border/60 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
                 data-testid={`card-differentiator-${index}`}
               >
-                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mb-4">
-                  <item.icon className="w-5 h-5 text-primary" />
+                <div className="w-12 h-12 rounded-xl bg-primary/10 ring-1 ring-primary/20 flex items-center justify-center mb-4 transition-colors group-hover:bg-primary/15 group-hover:ring-primary/40">
+                  <item.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">{item.title}</h3>
+                <h3 className="text-lg font-semibold tracking-tight mb-1">
+                  {item.title}
+                </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {item.description}
                 </p>

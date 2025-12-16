@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, color } from "framer-motion";
 
 const navLinks = [
   { label: "Services", href: "/#services", isAnchor: true },
@@ -27,7 +27,7 @@ export function Navigation() {
 
   const handleNavClick = (href: string, isAnchor: boolean) => {
     setIsMobileMenuOpen(false);
-    
+
     if (isAnchor) {
       if (location !== "/") {
         window.location.href = href;
@@ -52,6 +52,8 @@ export function Navigation() {
     }
   };
 
+  const navBarFontColor = !isScrolled && location === "/" ? "text-white" : "";
+  console.log({ navBarFontColor });
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -61,11 +63,19 @@ export function Navigation() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-8">
-        <Link href="/" className="flex items-center gap-2" data-testid="link-logo">
+        <Link
+          href="/"
+          className="flex items-center gap-2"
+          data-testid="link-logo"
+        >
           <div className="w-10 h-10 rounded-md bg-primary flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-lg">Q</span>
           </div>
-          <span className="font-bold text-xl tracking-tight">QuantumCusp</span>
+          <span
+            className={`font-bold text-xl tracking-tight ${navBarFontColor}`}
+          >
+            QuantumCusp
+          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -74,8 +84,10 @@ export function Navigation() {
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href, link.isAnchor)}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                data-testid={`link-nav-${link.label.toLowerCase().replace(" ", "-")}`}
+                className={`text-sm font-medium text-muted-foreground hover:text-foreground transition-colors ${navBarFontColor}`}
+                data-testid={`link-nav-${link.label
+                  .toLowerCase()
+                  .replace(" ", "-")}`}
               >
                 {link.label}
               </button>
@@ -83,8 +95,10 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                data-testid={`link-nav-${link.label.toLowerCase().replace(" ", "-")}`}
+                className={`text-sm font-medium text-muted-foreground hover:text-foreground transition-colors ${navBarFontColor}`}
+                data-testid={`link-nav-${link.label
+                  .toLowerCase()
+                  .replace(" ", "-")}`}
               >
                 {link.label}
               </Link>
@@ -94,7 +108,11 @@ export function Navigation() {
 
         <div className="hidden md:flex items-center gap-3">
           <Link href="/estimator">
-            <Button variant="outline" data-testid="button-get-quote">
+            <Button
+              variant="outline"
+              data-testid="button-get-quote"
+              className={`${navBarFontColor}`}
+            >
               Get a Quote
             </Button>
           </Link>
@@ -110,7 +128,11 @@ export function Navigation() {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           data-testid="button-mobile-menu"
         >
-          {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {isMobileMenuOpen ? (
+            <X className="w-5 h-5" />
+          ) : (
+            <Menu className="w-5 h-5" />
+          )}
         </Button>
       </nav>
 
@@ -128,8 +150,10 @@ export function Navigation() {
                   <button
                     key={link.href}
                     onClick={() => handleNavClick(link.href, link.isAnchor)}
-                    className="text-left text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
-                    data-testid={`link-mobile-nav-${link.label.toLowerCase().replace(" ", "-")}`}
+                    className={`text-left text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2 ${navBarFontColor}`}
+                    data-testid={`link-mobile-nav-${link.label
+                      .toLowerCase()
+                      .replace(" ", "-")}`}
                   >
                     {link.label}
                   </button>
@@ -137,9 +161,11 @@ export function Navigation() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                    className={`text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2 ${navBarFontColor}`}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    data-testid={`link-mobile-nav-${link.label.toLowerCase().replace(" ", "-")}`}
+                    data-testid={`link-mobile-nav-${link.label
+                      .toLowerCase()
+                      .replace(" ", "-")}`}
                   >
                     {link.label}
                   </Link>
@@ -148,7 +174,7 @@ export function Navigation() {
               <Link href="/estimator">
                 <Button
                   variant="outline"
-                  className="w-full mt-2"
+                  className={`w-full mt-2 ${navBarFontColor}`}
                   onClick={() => setIsMobileMenuOpen(false)}
                   data-testid="button-mobile-get-quote"
                 >

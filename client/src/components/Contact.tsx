@@ -81,13 +81,12 @@ export function Contact() {
               Get In Touch
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-              Ready to Start{" "}
-              <span className="text-primary">Your Project?</span>
+              Ready to Start <span className="text-primary">Your Project?</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
               Whether you have a specific project in mind or want to explore how
-              technology can help your business grow, we'd love to hear from you.
-              Let's start a conversation.
+              technology can help your business grow, we'd love to hear from
+              you. Let's start a conversation.
             </p>
 
             <div className="space-y-4">
@@ -140,7 +139,10 @@ export function Contact() {
                   </motion.div>
                 ) : (
                   <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <form
+                      onSubmit={form.handleSubmit(onSubmit)}
+                      className="space-y-6"
+                    >
                       <FormField
                         control={form.control}
                         name="name"

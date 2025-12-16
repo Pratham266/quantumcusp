@@ -104,19 +104,21 @@ export function Solutions() {
           {solutions.map((solution, index) => (
             <motion.div key={solution.audience} variants={itemVariants}>
               <Card
-                className="h-full flex flex-col hover-elevate transition-all duration-300"
+                className="group relative overflow-hidden h-full flex flex-col bg-gradient-to-br from-card to-muted/40 border border-card-border hover:border-primary/40 hover:ring-1 hover:ring-primary/20 hover:shadow-lg hover:-translate-y-1 hover-elevate transition-all duration-300 rounded-xl"
                 data-testid={`card-solution-${index}`}
               >
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 ring-1 ring-primary/20 flex items-center justify-center transition-colors group-hover:bg-primary/15 group-hover:ring-primary/40">
                       <solution.icon className="w-5 h-5 text-primary" />
                     </div>
                     <Badge variant="secondary" className="text-xs">
                       {solution.audience}
                     </Badge>
                   </div>
-                  <h3 className="text-xl font-bold">{solution.title}</h3>
+                  <h3 className="text-xl font-bold tracking-tight">
+                    {solution.title}
+                  </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {solution.description}
                   </p>
@@ -126,7 +128,7 @@ export function Solutions() {
                     {solution.outcomes.map((outcome, i) => (
                       <li
                         key={i}
-                        className="flex items-start gap-2 text-sm"
+                        className="flex items-start gap-2 text-sm text-foreground/90"
                         data-testid={`text-outcome-${index}-${i}`}
                       >
                         <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
