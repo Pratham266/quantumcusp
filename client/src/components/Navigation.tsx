@@ -109,7 +109,7 @@ export function Navigation() {
         <div className="hidden md:flex items-center gap-3">
           <Link href="/estimator">
             <Button
-              variant="outline"
+              variant={`${navBarFontColor ? "outlineLight" : "outline"}`}
               data-testid="button-get-quote"
               className={`${navBarFontColor}`}
             >
@@ -150,7 +150,7 @@ export function Navigation() {
                   <button
                     key={link.href}
                     onClick={() => handleNavClick(link.href, link.isAnchor)}
-                    className={`text-left text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2 ${navBarFontColor}`}
+                    className={`text-left text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2`}
                     data-testid={`link-mobile-nav-${link.label
                       .toLowerCase()
                       .replace(" ", "-")}`}
@@ -161,7 +161,7 @@ export function Navigation() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2 ${navBarFontColor}`}
+                    className={`text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2`}
                     onClick={() => setIsMobileMenuOpen(false)}
                     data-testid={`link-mobile-nav-${link.label
                       .toLowerCase()
