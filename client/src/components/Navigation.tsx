@@ -86,7 +86,7 @@ export function Navigation() {
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href, link.isAnchor)}
-                className={`text-sm font-medium text-muted-foreground hover:text-foreground transition-colors ${navBarFontColor}`}
+                className={`text-md font-medium text-muted-foreground hover:text-foreground transition-colors ${navBarFontColor}`}
                 data-testid={`link-nav-${link.label
                   .toLowerCase()
                   .replace(" ", "-")}`}
@@ -97,7 +97,7 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium text-muted-foreground hover:text-foreground transition-colors ${navBarFontColor}`}
+                className={`text-md font-medium text-muted-foreground hover:text-foreground transition-colors ${navBarFontColor}`}
                 data-testid={`link-nav-${link.label
                   .toLowerCase()
                   .replace(" ", "-")}`}
