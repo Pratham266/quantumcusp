@@ -1,6 +1,7 @@
 {
-    "buildCommand": "npm run build",
-    "outputDirectory": "client/dist",
+    "buildSettings": {
+        "outputDirectory": "dist/public"
+    },
     "rewrites": [
         {
             "source": "/(.*)",
