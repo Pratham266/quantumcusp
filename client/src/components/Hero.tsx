@@ -55,10 +55,21 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"
+      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-slate-950"
     >
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-cyan-600/20 animate-gradient" />
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/videos/tech.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Animated gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/30 via-purple-600/30 to-cyan-600/30 animate-gradient" />
       
       {/* Grid pattern overlay */}
       <div 
