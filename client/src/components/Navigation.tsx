@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence, color } from "framer-motion";
+import { HiBars3 } from "react-icons/hi2";
+import { HiX } from "react-icons/hi";
+
 
 const navLinks = [
   { label: "Services", href: "/#services", isAnchor: true },
@@ -129,11 +131,11 @@ export function Navigation() {
           data-testid="button-mobile-menu"
         >
           {isMobileMenuOpen ? (
-            <X className="w-5 h-5" />
+           <HiX className={navBarFontColor}/>
           ) : (
-            <Menu className="w-5 h-5" />
+            <HiBars3 className={navBarFontColor}/>
           )}
-        </Button>
+        </Button> 
       </nav>
 
       <AnimatePresence>
@@ -144,13 +146,13 @@ export function Navigation() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border"
           >
-            <div className="px-6 py-4 flex flex-col gap-4">
+            <div className="px-6 py-6 flex flex-col gap-2">
               {navLinks.map((link) =>
                 link.isAnchor ? (
                   <button
                     key={link.href}
                     onClick={() => handleNavClick(link.href, link.isAnchor)}
-                    className={`text-left text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2`}
+                    className={`text-left text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all py-3 px-3 rounded-lg`}
                     data-testid={`link-mobile-nav-${link.label
                       .toLowerCase()
                       .replace(" ", "-")}`}
@@ -161,7 +163,7 @@ export function Navigation() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2`}
+                    className={`text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all py-3 px-3 rounded-lg`}
                     onClick={() => setIsMobileMenuOpen(false)}
                     data-testid={`link-mobile-nav-${link.label
                       .toLowerCase()
@@ -171,10 +173,13 @@ export function Navigation() {
                   </Link>
                 )
               )}
+              
+              <div className="h-px bg-border my-3"></div>
+              
               <Link href="/estimator">
                 <Button
                   variant="outline"
-                  className={`w-full mt-2 ${navBarFontColor}`}
+                  className={"w-full"}
                   onClick={() => setIsMobileMenuOpen(false)}
                   data-testid="button-mobile-get-quote"
                 >
