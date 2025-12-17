@@ -1,9 +1,50 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { motion } from "framer-motion";
-import heroImage from "@assets/generated_images/modern_tech_workspace_hero.png";
+import { useState, useEffect } from "react";
+
+const taglines = [
+  "Real Business Growth.",
+  "Smarter Automation.",
+  "Scalable Solutions.",
+  "Future-Ready Innovation.",
+  "AI-Powered Success.",
+];
 
 export function Hero() {
+  const [currentTagline, setCurrentTagline] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentText = taglines[currentTagline];
+    const typingSpeed = isDeleting ? 50 : 100;
+    const pauseTime = isDeleting ? 500 : 2000;
+
+    if (!isDeleting && displayedText === currentText) {
+      // Pause before deleting
+      const timeout = setTimeout(() => setIsDeleting(true), pauseTime);
+      return () => clearTimeout(timeout);
+    }
+
+    if (isDeleting && displayedText === "") {
+      // Move to next tagline
+      setIsDeleting(false);
+      setCurrentTagline((prev) => (prev + 1) % taglines.length);
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setDisplayedText((prev) =>
+        isDeleting
+          ? currentText.substring(0, prev.length - 1)
+          : currentText.substring(0, prev.length + 1)
+      );
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, currentTagline]);
+
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -14,14 +55,67 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden"
+      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"
     >
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-cyan-600/20 animate-gradient" />
+      
+      {/* Grid pattern overlay */}
+      <div 
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px'
+        }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+      
+      {/* Floating orbs */}
+      <motion.div
+        animate={{
+          x: [0, 100, 0],
+          y: [0, -100, 0],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute top-20 left-20 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl"
+      />
+      <motion.div
+        animate={{
+          x: [0, -100, 0],
+          y: [0, 100, 0],
+          scale: [1, 1.3, 1],
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl"
+      />
+      <motion.div
+        animate={{
+          x: [0, -50, 0],
+          y: [0, -50, 0],
+          scale: [1, 1.1, 1],
+        }}
+        transition={{
+          duration: 18,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute top-1/2 left-1/2 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl"
+      />
+      
+      {/* Gradient overlays for depth */}
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-slate-950/80" />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 w-full">
         <motion.div
@@ -47,7 +141,10 @@ export function Hero() {
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6"
           >
             Smart Technology.{" "}
-            <span className="text-primary">Real Business Growth.</span>
+            <span className="text-primary">
+              {displayedText}
+              <span className="animate-pulse">|</span>
+            </span>
           </motion.h1>
 
           <motion.p
