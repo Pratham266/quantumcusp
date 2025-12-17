@@ -1,7 +1,5 @@
 {
-    "buildSettings": {
-        "outputDirectory": "dist/public"
-    },
+    "outputDirectory": "dist/public",
     "rewrites": [
         {
             "source": "/(.*)",
