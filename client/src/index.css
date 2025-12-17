@@ -304,4 +304,28 @@
     background-size: 200% 200%;
     animation: gradient 15s ease infinite;
   }
+
+  /* Animated underline for nav links */
+  .nav-link-underline {
+    position: relative;
+  }
+
+  .nav-link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .nav-link-underline:hover::after {
+    width: 100%;
+  }
+
+  .dark-header .nav-link-underline::after {
+    background-color: hsl(var(--primary));
+  }
 }

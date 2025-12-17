@@ -62,7 +62,8 @@ export function Navigation() {
         isScrolled
           ? "bg-background/80 backdrop-blur-lg border-b border-border"
           : "bg-transparent"
-      }`}
+      }
+      ${!!navBarFontColor ? "light-header":"dark-header"}`}
     >
       <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-8">
         <Link
@@ -86,7 +87,7 @@ export function Navigation() {
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href, link.isAnchor)}
-                className={`text-md font-medium text-muted-foreground hover:text-foreground transition-colors ${navBarFontColor}`}
+                className={`nav-link-underline text-md font-medium text-muted-foreground  transition-colors ${navBarFontColor}`}
                 data-testid={`link-nav-${link.label
                   .toLowerCase()
                   .replace(" ", "-")}`}
@@ -97,7 +98,7 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-md font-medium text-muted-foreground hover:text-foreground transition-colors ${navBarFontColor}`}
+                className={`nav-link-underline text-md font-medium text-muted-foreground  transition-colors ${navBarFontColor}`}
                 data-testid={`link-nav-${link.label
                   .toLowerCase()
                   .replace(" ", "-")}`}
