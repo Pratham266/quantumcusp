@@ -29,14 +29,16 @@ export function Navigation() {
 
   const handleNavClick = (href: string, isAnchor: boolean) => {
     setIsMobileMenuOpen(false);
-
+    
     if (isAnchor) {
       if (location !== "/") {
         window.location.href = href;
       } else {
         const element = document.querySelector(href.replace("/", ""));
         if (element) {
+          setTimeout(()=>{
           element.scrollIntoView({ behavior: "smooth" });
+          },0)
         }
       }
     }
@@ -55,7 +57,7 @@ export function Navigation() {
   };
 
   const navBarFontColor = !isScrolled && location === "/" ? "text-white" : "";
-  console.log({ navBarFontColor });
+  
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
