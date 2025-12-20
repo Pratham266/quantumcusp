@@ -7,6 +7,7 @@ import { HiX } from "react-icons/hi";
 
 
 const navLinks = [
+  { label: "Home", href: "/", isAnchor: false },
   { label: "Services", href: "/#services", isAnchor: true },
   { label: "Solutions", href: "/#solutions", isAnchor: true },
   { label: "Case Studies", href: "/case-studies", isAnchor: false },

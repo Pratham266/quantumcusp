@@ -6,6 +6,7 @@ import { Solutions } from "@/components/Solutions";
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { CallToAction } from "@/components/CallToAction";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Solutions />
         <About />
         <Contact />
+        <CallToAction />
       </main>
       <Footer />
     </div>

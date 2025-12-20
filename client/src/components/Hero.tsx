@@ -55,10 +55,10 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-slate-950"
+      className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-slate-950"
     >
       {/* Video Background */}
-      <video
+      {/* <video
         autoPlay
         loop
         muted
@@ -66,10 +66,10 @@ export function Hero() {
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src="/videos/tech.mp4" type="video/mp4" />
-      </video>
+      </video> */}
       
       {/* Animated gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/30 via-purple-600/30 to-cyan-600/30 animate-gradient" />
+      {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-600/30 via-purple-600/30 to-cyan-600/30 animate-gradient" /> */}
       
       {/* Grid pattern overlay */}
       <div 
@@ -125,8 +125,8 @@ export function Hero() {
       />
       
       {/* Gradient overlays for depth */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-slate-950/80" />
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+      {/* <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-slate-950/80" />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" /> */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 w-full">
         <motion.div
@@ -197,7 +197,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" /> */}
     </section>
   );
 }
