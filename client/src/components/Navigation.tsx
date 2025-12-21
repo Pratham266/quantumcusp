@@ -59,11 +59,19 @@ export function Navigation() {
   const handleGetStarted = () => {
     setIsMobileMenuOpen(false);
     if (location !== "/") {
-      window.location.href = "/#contact";
+      setLocation("/#contact");
+      setTimeout(() => {
+          const element = document.querySelector("#contact");
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
     } else {
       const element = document.querySelector("#contact");
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+        setTimeout(()=>{
+            element.scrollIntoView({ behavior: "smooth" });
+        },100)
       }
     }
   };
