@@ -94,13 +94,14 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
-export const caseStudies: CaseStudy[] = [
+export const testimonials: CaseStudy[] = [
   {
     id: "1",
     slug: "fintech-platform-modernization",
     title: "Fintech Platform Modernization",
     client: "Global Financial Services Corp",
     industry: "Financial Services",
+    rating: 5,
     challenge: "Legacy systems causing slow transaction processing and high maintenance costs. The existing platform couldn't support growing transaction volumes or new product requirements.",
     solution: "Complete platform modernization using microservices architecture, cloud-native infrastructure, and modern API design. Implemented real-time data processing and automated compliance checks.",
     results: [
@@ -127,6 +128,7 @@ export const caseStudies: CaseStudy[] = [
     title: "E-commerce AI Personalization Engine",
     client: "RetailMax",
     industry: "E-commerce",
+    rating: 5,
     challenge: "Generic product recommendations leading to low conversion rates and customer engagement. The existing recommendation system was rule-based and couldn't adapt to individual preferences.",
     solution: "Built a custom AI-powered personalization engine using machine learning to analyze customer behavior, predict preferences, and deliver real-time personalized experiences across all touchpoints.",
     results: [
@@ -153,6 +155,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Healthcare Operations Automation",
     client: "MedCare Network",
     industry: "Healthcare",
+    rating: 5,
     challenge: "Manual administrative processes consuming staff time and causing delays in patient care. Paper-based workflows leading to errors and compliance risks.",
     solution: "Implemented comprehensive workflow automation including patient intake, scheduling, billing, and compliance reporting. Integrated with existing EHR systems while adding intelligent document processing.",
     results: [

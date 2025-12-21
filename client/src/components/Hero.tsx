@@ -57,20 +57,6 @@ export function Hero() {
       id="hero"
       className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-slate-950"
     >
-      {/* Video Background */}
-      {/* <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="/videos/tech.mp4" type="video/mp4" />
-      </video> */}
-      
-      {/* Animated gradient overlay */}
-      {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-600/30 via-purple-600/30 to-cyan-600/30 animate-gradient" /> */}
-      
       {/* Grid pattern overlay */}
       <div 
         className="absolute inset-0 opacity-20"
@@ -123,12 +109,7 @@ export function Hero() {
         }}
         className="absolute top-1/2 left-1/2 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl"
       />
-      
-      {/* Gradient overlays for depth */}
-      {/* <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-slate-950/80" />
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" /> */}
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-32 w-full grid lg:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -195,9 +176,32 @@ export function Hero() {
             </Button>
           </motion.div>
         </motion.div>
+        
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          className="relative lg:block"
+        >
+          <motion.div
+            animate={{ 
+              y: [0, -30, 0],
+              x: [0, 20, 0]
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <img 
+              src="/images/HeroWelcome.png" 
+              alt="Hero Welcome" 
+              className="w-full h-auto object-contain drop-shadow-2xl"
+            />
+          </motion.div>
+        </motion.div>
       </div>
-
-      {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" /> */}
     </section>
   );
 }

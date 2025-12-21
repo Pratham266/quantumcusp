@@ -55,6 +55,7 @@ export interface CaseStudy {
   results: string[];
   metrics: { label: string; value: string }[];
   testimonial?: { quote: string; author: string; role: string };
+  rating?: number;
 }
 
 export interface TeamMember {

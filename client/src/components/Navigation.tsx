@@ -10,7 +10,7 @@ const navLinks = [
   { label: "Home", href: "/", isAnchor: false },
   { label: "Services", href: "/#services", isAnchor: true },
   { label: "Solutions", href: "/#solutions", isAnchor: true },
-  { label: "Case Studies", href: "/case-studies", isAnchor: false },
+  { label: "Testimonials", href: "/testimonials", isAnchor: false },
   { label: "Blog", href: "/blog", isAnchor: false },
   { label: "Team", href: "/team", isAnchor: false },
 ];

@@ -68,7 +68,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-28">
+    <section id="contact" className="py-20 lg:py-28 bg-gradient-to-r from-[#FF7A30] to-[#FFB347]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div
@@ -77,33 +77,29 @@ export function Contact() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
-              Get In Touch
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-              Ready to Start <span className="text-primary">Your Project?</span>
+           
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-white">
+              Ready to Start Your Project?
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+            <p className="text-white text-lg leading-relaxed mb-8">
               Whether you have a specific project in mind or want to explore how
               technology can help your business grow, we'd love to hear from
               you. Let's start a conversation.
             </p>
 
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Email us at</p>
-                  <a
-                    href="mailto:hello@quantumcusp.co"
-                    className="font-medium hover:text-primary transition-colors"
-                    data-testid="link-email"
-                  >
-                    hello@quantumcusp.co
-                  </a>
-                </div>
+            <div className="bg-white rounded-[20px] p-3 pr-8 inline-flex items-center gap-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-orange-100 max-w-md w-full sm:w-auto">
+              <div className="w-14 h-14 rounded-[18px] bg-gradient-to-b from-[#FF853C] to-[#FFB95D] flex items-center justify-center shrink-0 shadow-orange-200 shadow-inner ring-1 ring-white/20">
+                <Mail className="w-7 h-7 text-white" strokeWidth={2.5} />
+              </div>
+              <div className="flex flex-col gap-0.5">
+                <p className="text-[#0F172A] font-semibold text-lg leading-none">Email us at</p>
+                <a
+                  href="mailto:hello@quantumcusp.co"
+                  className="text-[#FF7A30] text-lg font-medium leading-tight hover:text-[#E66010] transition-colors"
+                  data-testid="link-email"
+                >
+                  hello@quantumcusp.co
+                </a>
               </div>
             </div>
           </motion.div>
@@ -114,8 +110,8 @@ export function Contact() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Card>
-              <CardContent className="p-6 lg:p-8">
+            <Card className="rounded-3xl shadow-xl overflow-hidden border-none text-left">
+              <CardContent className="p-8 lg:p-12 bg-white">
                 {isSubmitted ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -125,14 +121,15 @@ export function Contact() {
                     <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
                       <CheckCircle className="w-8 h-8 text-primary" />
                     </div>
-                    <h3 className="text-xl font-bold mb-2">Message Sent!</h3>
-                    <p className="text-muted-foreground mb-6">
+                    <h3 className="text-xl font-bold mb-2 text-gray-900">Message Sent!</h3>
+                    <p className="text-gray-500 mb-6 font-medium">
                       Thank you for reaching out. We'll get back to you shortly.
                     </p>
                     <Button
                       variant="outline"
                       onClick={() => setIsSubmitted(false)}
                       data-testid="button-send-another"
+                      className="rounded-xl border-2 font-semibold"
                     >
                       Send Another Message
                     </Button>
@@ -148,15 +145,16 @@ export function Contact() {
                         name="name"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Name</FormLabel>
+                            <FormLabel className="text-base font-medium text-gray-900 ml-1">Name</FormLabel>
                             <FormControl>
                               <Input
                                 placeholder="Your name"
                                 {...field}
                                 data-testid="input-name"
+                                className="h-14 w-full px-5 py-4 bg-gray-50 border-2 border-gray-100 rounded-xl focus:outline-none  focus:bg-white transition-all text-[#070033] placeholder-gray-400"
                               />
                             </FormControl>
-                            <FormMessage />
+                            <FormMessage className="ml-1" />
                           </FormItem>
                         )}
                       />
@@ -166,16 +164,17 @@ export function Contact() {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Email</FormLabel>
+                            <FormLabel className="text-base font-medium text-gray-900 ml-1">Email</FormLabel>
                             <FormControl>
                               <Input
                                 type="email"
                                 placeholder="your@email.com"
                                 {...field}
                                 data-testid="input-email"
+                                className="h-14 w-full px-5 py-4 bg-gray-50 border-2 border-gray-100 rounded-xl focus:outline-none focus:bg-white transition-all text-[#070033] placeholder-gray-400"
                               />
                             </FormControl>
-                            <FormMessage />
+                            <FormMessage className="ml-1" />
                           </FormItem>
                         )}
                       />
@@ -185,38 +184,44 @@ export function Contact() {
                         name="message"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Message</FormLabel>
+                            <FormLabel className="text-base font-medium text-gray-900 ml-1">Message</FormLabel>
                             <FormControl>
                               <Textarea
                                 placeholder="Tell us about your project..."
-                                className="min-h-[120px] resize-none"
+                                className="min-h-[160px] w-full px-5 py-4 bg-gray-50 border-2 border-gray-100 rounded-xl focus:outline-none  focus:bg-white transition-all text-[#070033] placeholder-gray-400 resize-none"
                                 {...field}
                                 data-testid="input-message"
                               />
                             </FormControl>
-                            <FormMessage />
+                            <FormMessage className="ml-1" />
                           </FormItem>
                         )}
                       />
 
                       <Button
                         type="submit"
-                        className="w-full"
+                        className="w-full h-14 text-lg font-semibold rounded-2xl bg-gradient-to-r from-[#FF7A30] to-[#FFB347] hover:from-[#FF7A30] hover:to-[#FF9933] shadow-lg shadow-orange-500/20 transition-all hover:scale-[1.01] active:scale-[0.99]"
                         disabled={mutation.isPending}
                         data-testid="button-submit-contact"
                       >
                         {mutation.isPending ? (
                           <>
-                            <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                            Sending...
+                            <Loader2 className="w-5 h-5 mr-2 animate-spin text-white" />
+                            <span className="text-white">Sending...</span>
                           </>
                         ) : (
-                          <>
+                          <span className="flex items-center text-white">
                             Send Message
-                            <ArrowRight className="w-4 h-4 ml-2" />
-                          </>
+                            <svg className="w-5 h-5 ml-2 -rotate-45 relative top-[-1px]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                            </svg>
+                          </span>
                         )}
                       </Button>
+                      
+                      <p className="text-center text-sm text-gray-400 mt-6">
+                        We respect your privacy. Your information will never be shared.
+                      </p>
                     </form>
                   </Form>
                 )}

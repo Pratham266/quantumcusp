@@ -6,11 +6,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, ArrowRight, CheckCircle, Quote } from "lucide-react";
 import { motion } from "framer-motion";
-import { caseStudies } from "@/lib/data";
+import { testimonials } from "@/lib/data";
 
 export default function CaseStudyDetail() {
   const params = useParams<{ slug: string }>();
-  const study = caseStudies.find((s) => s.slug === params.slug);
+  const study = testimonials.find((s) => s.slug === params.slug);
 
   if (!study) {
     return (
@@ -22,10 +22,10 @@ export default function CaseStudyDetail() {
             <p className="text-muted-foreground mb-6">
               The case study you're looking for doesn't exist.
             </p>
-            <Link href="/case-studies">
+            <Link href="/testimonials">
               <Button variant="outline" data-testid="button-back-to-cases">
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Case Studies
+                Back to Testimonials
               </Button>
             </Link>
           </div>
@@ -50,7 +50,7 @@ export default function CaseStudyDetail() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Link href="/case-studies">
+              <Link href="/testimonials">
                 <Button
                   variant="ghost"
                   size="sm"
@@ -58,7 +58,7 @@ export default function CaseStudyDetail() {
                   data-testid="button-back-to-cases"
                 >
                   <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back to Case Studies
+                  Back to Testimonials
                 </Button>
               </Link>
 
@@ -138,10 +138,10 @@ export default function CaseStudyDetail() {
 
                 <section className="pt-8 border-t border-border">
                   <div className="flex flex-wrap gap-4 items-center justify-between">
-                    <Link href="/case-studies">
+                    <Link href="/testimonials">
                       <Button variant="outline" data-testid="button-more-cases">
                         <ArrowLeft className="w-4 h-4 mr-2" />
-                        More Case Studies
+                        More Testimonials
                       </Button>
                     </Link>
                     <Button onClick={scrollToContact} data-testid="button-start-project">

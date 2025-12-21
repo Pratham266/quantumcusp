@@ -8,10 +8,10 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
-import CaseStudies from "@/pages/CaseStudies";
 import CaseStudyDetail from "@/pages/CaseStudyDetail";
 import Team from "@/pages/Team";
 import Estimator from "@/pages/Estimator";
+import Testimonials from "@/pages/Testimonials";
 
 function Router() {
   return (
@@ -21,8 +21,8 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPost} />
-        <Route path="/case-studies" component={CaseStudies} />
-        <Route path="/case-studies/:slug" component={CaseStudyDetail} />
+        <Route path="/testimonials" component={Testimonials} />
+        <Route path="/testimonials/:slug" component={CaseStudyDetail} />
         <Route path="/team" component={Team} />
         <Route path="/estimator" component={Estimator} />
         <Route component={NotFound} />
