@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -62,8 +64,8 @@
   --chart-4: 25 90% 55%;
   --chart-5: 10 85% 50%;
 
-  --font-sans: Inter, sans-serif;
-  --font-serif: Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-serif: Outfit, sans-serif;
   --font-mono: Menlo, monospace;
   --radius: .5rem;
 

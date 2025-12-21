@@ -58,12 +58,8 @@ export function WhyQuantumCusp() {
             </p>
             <ul className="space-y-4">
               {benefits.map((benefit, index) => (
-                <motion.li
+                <li
                   key={benefit}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="flex items-center gap-3"
                   data-testid={`text-benefit-${index}`}
                 >
@@ -71,7 +67,7 @@ export function WhyQuantumCusp() {
                     <Check className="w-3 h-3 text-primary" />
                   </div>
                   <span className="text-foreground">{benefit}</span>
-                </motion.li>
+                </li>
               ))}
             </ul>
           </motion.div>
@@ -84,12 +80,8 @@ export function WhyQuantumCusp() {
             className="grid grid-cols-1 sm:grid-cols-2 gap-6"
           >
             {differentiators.map((item, index) => (
-              <motion.div
+              <div
                 key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
                 className="group relative p-6 rounded-xl bg-gradient-to-br from-background to-muted/50 border border-border/60 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
                 data-testid={`card-differentiator-${index}`}
               >
@@ -102,7 +94,7 @@ export function WhyQuantumCusp() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {item.description}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </motion.div>
         </div>

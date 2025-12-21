@@ -7,7 +7,7 @@ import { HiX } from "react-icons/hi";
 
 
 const navLinks = [
-  { label: "Home", href: "/", isAnchor: false },
+  { label: "Home", href: "/home", isAnchor: false },
   { label: "Services", href: "/#services", isAnchor: true },
   { label: "Solutions", href: "/#solutions", isAnchor: true },
   { label: "Testimonials", href: "/testimonials", isAnchor: false },
@@ -18,7 +18,8 @@ const navLinks = [
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
+  const [viewChanges,setViewChanges]  = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,11 +31,21 @@ export function Navigation() {
 
   const handleNavClick = (href: string, isAnchor: boolean) => {
     setIsMobileMenuOpen(false);
-    
+
     if (isAnchor) {
       if (location !== "/") {
-        window.location.href = href;
+        
+        setLocation(href);
+        // Add a small delay to allow Home page to mount before scrolling
+        setTimeout(() => {
+          const element = document.querySelector(href.replace("/", ""));
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
       } else {
+        setViewChanges(!viewChanges)
+        window.history.pushState(null, "", href);
         const element = document.querySelector(href.replace("/", ""));
         if (element) {
           setTimeout(()=>{
@@ -57,13 +68,15 @@ export function Navigation() {
     }
   };
 
-  const navBarFontColor = !isScrolled && location === "/" ? "text-white" : "";
-  
+  const navBarFontColor = !isScrolled && ['/','/home'].includes(location) ? "text-white" : "";
+  console.log({wl:window.location.pathname,
+    whref:window.location.href,
+  })
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border"
+          ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-md"
           : "bg-transparent"
       }
       ${!!navBarFontColor ? "light-header":"dark-header"}`}
@@ -90,7 +103,8 @@ export function Navigation() {
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href, link.isAnchor)}
-                className={`nav-link-underline text-md font-medium text-muted-foreground  transition-colors ${navBarFontColor}`}
+                className={`nav-link-underline text-xl font-medium text-muted-foreground  transition-colors  
+                ${window.location.href.includes(link.href) ? "text-primary":`${navBarFontColor}`}`}
                 data-testid={`link-nav-${link.label
                   .toLowerCase()
                   .replace(" ", "-")}`}
@@ -101,7 +115,8 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`nav-link-underline text-md font-medium text-muted-foreground  transition-colors ${navBarFontColor}`}
+                className={`nav-link-underline text-xl font-medium text-muted-foreground  transition-colors 
+                ${window.location.href.includes(link.href) ? "text-primary":`${navBarFontColor}`}`}
                 data-testid={`link-nav-${link.label
                   .toLowerCase()
                   .replace(" ", "-")}`}
@@ -156,7 +171,7 @@ export function Navigation() {
                   <button
                     key={link.href}
                     onClick={() => handleNavClick(link.href, link.isAnchor)}
-                    className={`text-left text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all py-3 px-3 rounded-lg`}
+                    className={`text-left text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all py-3 px-3 rounded-lg ${window.location.href.includes(link.href) ? "text-primary":`${navBarFontColor}`}`}
                     data-testid={`link-mobile-nav-${link.label
                       .toLowerCase()
                       .replace(" ", "-")}`}
@@ -167,7 +182,7 @@ export function Navigation() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all py-3 px-3 rounded-lg`}
+                    className={`text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all py-3 px-3 rounded-lg ${window.location.href.includes(link.href) ? "text-primary":`${navBarFontColor}`}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                     data-testid={`link-mobile-nav-${link.label
                       .toLowerCase()
