@@ -171,7 +171,7 @@ export function Navigation() {
                   <button
                     key={link.href}
                     onClick={() => handleNavClick(link.href, link.isAnchor)}
-                    className={`text-left text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all py-3 px-3 rounded-lg ${window.location.href.includes(link.href) ? "text-primary":`${navBarFontColor}`}`}
+                    className={`text-left text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all py-3 px-3 rounded-lg ${window.location.href.includes(link.href) ? "text-primary":""}`}
                     data-testid={`link-mobile-nav-${link.label
                       .toLowerCase()
                       .replace(" ", "-")}`}
@@ -182,7 +182,7 @@ export function Navigation() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all py-3 px-3 rounded-lg ${window.location.href.includes(link.href) ? "text-primary":`${navBarFontColor}`}`}
+                    className={`text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all py-3 px-3 rounded-lg ${window.location.href.includes(link.href) ? "text-primary":""}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                     data-testid={`link-mobile-nav-${link.label
                       .toLowerCase()
