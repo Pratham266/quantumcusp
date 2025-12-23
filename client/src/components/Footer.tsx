@@ -118,7 +118,7 @@ export function Footer() {
                         data-testid="button-submit-contact"
                       >
                           <span className="flex items-center text-white">
-                            Get a Project Quote
+                            Start Now
                           </span>
                       </Button>
               </li>

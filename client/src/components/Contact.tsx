@@ -46,7 +46,7 @@ export function Contact() {
 
   const mutation = useMutation({
     mutationFn: async (data: ContactFormData) => {
-      return await apiRequest("POST", "/api/contact", data);
+      return await apiRequest("POST", "http://localhost:5001/api/contact", data);
     },
     onSuccess: () => {
       setIsSubmitted(true);

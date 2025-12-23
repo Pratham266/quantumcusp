@@ -142,7 +142,7 @@ export function Navigation() {
               data-testid="button-get-quote"
               className={`${navBarFontColor}`}
             >
-              Get a Quote
+              Start Now
             </Button>
           </Link>
           <Button onClick={handleGetStarted} data-testid="button-get-started">
@@ -210,7 +210,7 @@ export function Navigation() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   data-testid="button-mobile-get-quote"
                 >
-                  Get a Quote
+                  Start Now
                 </Button>
               </Link>
               <Button

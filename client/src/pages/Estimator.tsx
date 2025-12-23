@@ -103,7 +103,7 @@ export default function Estimator() {
         email: data.email,
         message: `Project Type: ${projectType}\nServices: ${selectedServices.join(", ")}\nCompany: ${data.company || "N/A"}\n\n${data.message}`,
       };
-      return await apiRequest("POST", "/api/contact", payload);
+      return await apiRequest("POST", "http://localhost:5001/api/contact", payload);
     },
     onSuccess: () => {
       setIsSubmitted(true);
@@ -154,14 +154,13 @@ export default function Estimator() {
               className="text-center mb-12"
             >
               <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
-                Project Estimator
+                Project Brief
               </span>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-                Get a <span className="text-primary">Custom Quote</span>
+                Tell Us <span className="text-primary">About Your Project</span>
               </h1>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-                Tell us about your project and we'll provide a tailored estimate
-                and timeline.
+                Share a few details so we can understand your goals, scope, and technical needs.
               </p>
             </motion.div>
 
@@ -394,7 +393,7 @@ export default function Estimator() {
                               </>
                             ) : (
                               <>
-                                Get Your Estimate
+                                Submit Project Details
                                 <ArrowRight className="w-4 h-4 ml-2" />
                               </>
                             )}
