@@ -103,7 +103,7 @@ export default function Estimator() {
         email: data.email,
         message: `Project Type: ${projectType}\nServices: ${selectedServices.join(", ")}\nCompany: ${data.company || "N/A"}\n\n${data.message}`,
       };
-      return await apiRequest("POST", "http://localhost:5001/api/contact", payload);
+      return await apiRequest("POST", "https://quantumcusp-service.vercel.app/api/contact", payload);
     },
     onSuccess: () => {
       setIsSubmitted(true);
