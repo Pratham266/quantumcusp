@@ -1,6 +1,7 @@
-import { Link } from "wouter";
+import { Link,useLocation } from "wouter";
 import { SiLinkedin, SiX, SiGithub } from "react-icons/si";
 import { Button } from "@/components/ui/button";
+
 
 
 const quickLinks = [
@@ -18,6 +19,7 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const [,setLocation]=useLocation();
   const handleAnchorClick = (href: string) => {
     if (window.location.pathname !== "/") {
       window.location.href = href;
@@ -108,19 +110,9 @@ export function Footer() {
               <li>
 
                
-
-                <Button
-                        type="submit"
-                        onClick={() => {
-                          window.location.href = "/estimator";
-                        }}
-                        className="h-14 text-lg font-semibold rounded-2xl bg-gradient-to-r from-[#FF7A30] to-[#FFB347] hover:from-[#FF7A30] hover:to-[#FF9933] shadow-lg shadow-orange-500/20 transition-all hover:scale-[1.01] active:scale-[0.99]"
-                        data-testid="button-submit-contact"
-                      >
-                          <span className="flex items-center text-white">
-                            Start Now
-                          </span>
-                      </Button>
+               <Button onClick={()=>{setLocation("/estimator")}} data-testid="button-get-started">
+                 Start Now
+               </Button>
               </li>
             </ul>
           </div>

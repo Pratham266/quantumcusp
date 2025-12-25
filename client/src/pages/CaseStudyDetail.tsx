@@ -1,4 +1,4 @@
-import { Link, useParams } from "wouter";
+import { Link, useParams, useLocation } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -11,6 +11,7 @@ import "./CaseStudyDetail.css";
 export default function CaseStudyDetail() {
   const params = useParams<{ slug: string }>();
   const study = testimonials.find((s) => s.slug === params.slug);
+  const [, setLocation] = useLocation();
 
   if (!study) {
     return (
@@ -35,8 +36,10 @@ export default function CaseStudyDetail() {
     );
   }
 
+  
+
   const scrollToContact = () => {
-    window.location.href = "/#contact";
+    setLocation("/estimator");
   };
 
   return (
@@ -71,13 +74,13 @@ export default function CaseStudyDetail() {
                 {study.metrics.map((metric, i) => (
                   <div
                     key={i}
-                    className="text-center p-6 rounded-md bg-card border border-border"
+                    className="text-center p-6 rounded-md bg-card border border-border h-full flex flex-col justify-between"
                     data-testid={`metric-${i}`}
                   >
-                    <div className="text-3xl font-bold text-primary mb-2">
+                    <div className="text-3xl font-bold text-primary mb-2 flex-grow flex items-center justify-center">
                       {metric.value}
                     </div>
-                    <div className="text-sm text-muted-foreground">{metric.label}</div>
+                    <div className="text-sm text-muted-foreground mt-auto">{metric.label}</div>
                   </div>
                 ))}
               </div>

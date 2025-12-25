@@ -10,7 +10,7 @@ import "./Testimonials.css";
 
 export default function Testimonials() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-b from-background to-primary/10">
       <Navigation />
       <main className="pt-20">
         <section className="py-20 lg:py-28 relative overflow-hidden">
@@ -39,7 +39,7 @@ export default function Testimonials() {
               {/* Stats Section */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto border-t border-border pt-12">
                 <div className="text-center">
-                   <div className="text-3xl font-bold text-primary mb-2">500+</div>
+                   <div className="text-3xl font-bold text-primary mb-2">10+</div>
                    <div className="text-sm text-muted-foreground font-medium">Projects Delivered</div>
                 </div>
                 <div className="text-center md:border-l md:border-r border-border/50">
@@ -47,7 +47,7 @@ export default function Testimonials() {
                    <div className="text-sm text-muted-foreground font-medium">Client Satisfaction</div>
                 </div>
                 <div className="text-center">
-                   <div className="text-3xl font-bold text-primary mb-2">12+</div>
+                   <div className="text-3xl font-bold text-primary mb-2">3+</div>
                    <div className="text-sm text-muted-foreground font-medium">Years Experience</div>
                 </div>
               </div>
@@ -58,7 +58,7 @@ export default function Testimonials() {
                 <div key={study.id} className="testimonial-card-wrapper">
                   <Link href={`/testimonials/${study.slug}`}>
                     <Card
-                      className="group relative border border-border/40 shadow-sm hover:shadow-xl hover:border-orange-500 transition-all duration-300 cursor-pointer bg-card overflow-hidden"
+                      className="group relative border border-border/40 shadow-sm hover:shadow-xl border-orange-500 transition-all duration-300 cursor-pointer bg-card overflow-hidden"
                       data-testid={`card-case-study-${index}`}
                     >
                       {/* Decorative corner blob */}
@@ -95,12 +95,12 @@ export default function Testimonials() {
                           {study.metrics.map((metric, i) => (
                             <div
                               key={i}
-                              className="text-center p-6 rounded-2xl bg-background border border-border/60 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]"
+                              className="text-center p-6 rounded-2xl bg-background border border-border/60 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] h-full flex flex-col justify-between"
                             >
-                              <div className="text-xl sm:text-2xl font-bold text-orange-500 mb-2">
+                              <div className="text-xl sm:text-2xl font-bold text-orange-500 mb-2 flex-grow flex items-center justify-center">
                                 {metric.value}
                               </div>
-                              <div className="text-xs font-medium text-muted-foreground">
+                              <div className="text-xs font-medium text-muted-foreground mt-auto">
                                 {metric.label}
                               </div>
                             </div>

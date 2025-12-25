@@ -11,15 +11,17 @@ export const CallToAction = () => {
       <div className="cta-shape shape-circle" />
       <div className="cta-shape shape-square" />
       <div className="cta-shape shape-arc" />
+      <div className="cta-shape shape-triangle" />
+      <div className="cta-shape shape-cross" />
+      <div className="cta-shape shape-ring" />
 
       {/* Content */}
       <div className="cta-content">
         <h2 className="cta-heading">
-          We've helped brands of all kinds and businesses of every size grow their
-          online revenue
+         We partner with growing brands and businesses to build powerful digital solutions.
         </h2>
         <p className="cta-subheading">
-          Are you ready to start your project? Contact us today and get started!
+           Ready to begin your next project? Reach out today and let’s get it moving.
         </p>
         <Button
               size="lg"

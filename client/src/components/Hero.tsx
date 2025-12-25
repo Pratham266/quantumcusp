@@ -84,7 +84,7 @@ export function Hero() {
 
           <h1 className="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
             Smart Technology.{" "}
-            <span className="text-primary">
+            <span className="text-primary" >
               {displayedText}
               <span className="animate-pulse">|</span>
             </span>
