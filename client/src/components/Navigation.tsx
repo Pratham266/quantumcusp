@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence, color } from "framer-motion";
 import { HiBars3 } from "react-icons/hi2";
 import { HiX } from "react-icons/hi";
+import "./Navigation.css";
 
 
 const navLinks = [
@@ -165,65 +165,58 @@ export function Navigation() {
         </Button> 
       </nav>
 
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border"
-          >
-            <div className="px-6 py-6 flex flex-col gap-2">
-              {navLinks.map((link) =>
-                link.isAnchor ? (
-                  <button
-                    key={link.href}
-                    onClick={() => handleNavClick(link.href, link.isAnchor)}
-                    className={`text-left text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all py-3 px-3 rounded-lg ${window.location.href.includes(link.href) ? "text-primary":""}`}
-                    data-testid={`link-mobile-nav-${link.label
-                      .toLowerCase()
-                      .replace(" ", "-")}`}
-                  >
-                    {link.label}
-                  </button>
-                ) : (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all py-3 px-3 rounded-lg ${window.location.href.includes(link.href) ? "text-primary":""}`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    data-testid={`link-mobile-nav-${link.label
-                      .toLowerCase()
-                      .replace(" ", "-")}`}
-                  >
-                    {link.label}
-                  </Link>
-                )
-              )}
-              
-              <div className="h-px bg-border my-3"></div>
-              
-              <Link href="/estimator">
-                <Button
-                  variant="outline"
-                  className={"w-full"}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  data-testid="button-mobile-get-quote"
+      {isMobileMenuOpen && (
+        <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''} md:hidden bg-background/95 backdrop-blur-lg border-b border-border`}>
+          <div className="px-6 py-6 flex flex-col gap-2">
+            {navLinks.map((link) =>
+              link.isAnchor ? (
+                <button
+                  key={link.href}
+                  onClick={() => handleNavClick(link.href, link.isAnchor)}
+                  className={`mobile-menu-item text-left text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all py-3 px-3 rounded-lg ${window.location.href.includes(link.href) ? "text-primary":""}`}
+                  data-testid={`link-mobile-nav-${link.label
+                    .toLowerCase()
+                    .replace(" ", "-")}`}
                 >
-                  Start Now
-                </Button>
-              </Link>
+                  {link.label}
+                </button>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`mobile-menu-item text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all py-3 px-3 rounded-lg ${window.location.href.includes(link.href) ? "text-primary":""}`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  data-testid={`link-mobile-nav-${link.label
+                    .toLowerCase()
+                    .replace(" ", "-")}`}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
+            
+            <div className="h-px bg-border my-3"></div>
+            
+            <Link href="/estimator">
               <Button
-                onClick={handleGetStarted}
-                className="w-full"
-                data-testid="button-mobile-get-started"
+                variant="outline"
+                className={"mobile-menu-item w-full"}
+                onClick={() => setIsMobileMenuOpen(false)}
+                data-testid="button-mobile-get-quote"
               >
-                Get Started
+                Start Now
               </Button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </Link>
+            <Button
+              onClick={handleGetStarted}
+              className="mobile-menu-item w-full"
+              data-testid="button-mobile-get-started"
+            >
+              Get Started
+            </Button>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

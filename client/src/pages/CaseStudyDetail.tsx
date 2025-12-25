@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, ArrowRight, CheckCircle, Quote } from "lucide-react";
-import { motion } from "framer-motion";
 import { testimonials } from "@/lib/data";
+import "./CaseStudyDetail.css";
 
 export default function CaseStudyDetail() {
   const params = useParams<{ slug: string }>();
@@ -45,11 +45,7 @@ export default function CaseStudyDetail() {
       <main className="pt-20">
         <article className="py-20 lg:py-28">
           <div className="max-w-4xl mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="case-study-content">
               <Link href="/testimonials">
                 <Button
                   variant="ghost"
@@ -151,7 +147,7 @@ export default function CaseStudyDetail() {
                   </div>
                 </section>
               </div>
-            </motion.div>
+            </div>
           </div>
         </article>
       </main>
@@ -159,3 +155,4 @@ export default function CaseStudyDetail() {
     </div>
   );
 }
+

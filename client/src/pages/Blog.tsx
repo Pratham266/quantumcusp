@@ -4,21 +4,8 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Clock, User } from "lucide-react";
-import { motion } from "framer-motion";
 import { blogPosts } from "@/lib/data";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
+import "./Blog.css";
 
 export default function Blog() {
   const featuredPosts = blogPosts.filter((post) => post.featured);
@@ -30,12 +17,7 @@ export default function Blog() {
       <main className="pt-20">
         <section className="py-20 lg:py-28">
           <div className="max-w-7xl mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
+            <div className="blog-header text-center mb-16">
               <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
                 Insights
               </span>
@@ -46,15 +28,10 @@ export default function Blog() {
                 Thought leadership on technology, business growth, and digital
                 transformation from our team of experts.
               </p>
-            </motion.div>
+            </div>
 
             {featuredPosts.length > 0 && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="mb-16"
-              >
+              <div className="blog-featured mb-16">
                 <h2 className="text-xl font-semibold mb-6">Featured</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {featuredPosts.map((post) => (
@@ -96,18 +73,14 @@ export default function Blog() {
                     </Link>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             )}
 
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-            >
+            <div className="blog-grid-container">
               <h2 className="text-xl font-semibold mb-6">All Articles</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {regularPosts.map((post) => (
-                  <motion.div key={post.id} variants={itemVariants}>
+                  <div key={post.id} className="blog-card-item">
                     <Link href={`/blog/${post.slug}`}>
                       <Card
                         className="h-full hover-elevate transition-all duration-300 cursor-pointer"
@@ -136,10 +109,10 @@ export default function Blog() {
                         </CardContent>
                       </Card>
                     </Link>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       </main>

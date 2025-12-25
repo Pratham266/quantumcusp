@@ -1,0 +1,51 @@
+/* Estimator Page Animations */
+
+.estimator-header {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.estimator-step-container {
+  opacity: 0;
+  transform: translateX(20px);
+  animation: slideInRight 0.3s ease-out forwards;
+}
+
+.estimator-success {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInScale 0.4s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

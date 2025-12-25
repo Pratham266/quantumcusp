@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import "./Hero.css";
 
 const taglines = [
   "Real Business Growth.",
@@ -70,91 +70,32 @@ export function Hero() {
       />
       
       {/* Floating orbs */}
-      <motion.div
-        animate={{
-          x: [0, 100, 0],
-          y: [0, -100, 0],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-20 left-20 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl"
-      />
-      <motion.div
-        animate={{
-          x: [0, -100, 0],
-          y: [0, 100, 0],
-          scale: [1, 1.3, 1],
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl"
-      />
-      <motion.div
-        animate={{
-          x: [0, -50, 0],
-          y: [0, -50, 0],
-          scale: [1, 1.1, 1],
-        }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-1/2 left-1/2 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl"
-      />
+      <div className="floating-orb-1 absolute top-20 left-20 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl" />
+      <div className="floating-orb-2 absolute bottom-20 right-20 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl" />
+      <div className="floating-orb-3 absolute top-1/2 left-1/2 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl" />
+
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-32 w-full grid lg:grid-cols-2 gap-12 items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-3xl"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+        <div className="hero-content max-w-3xl">
+          <div className="hero-badge">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary-foreground text-sm font-medium mb-6 backdrop-blur-sm border border-primary/30">
               Future-Ready Technology Partner
             </span>
-          </motion.div>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6"
-          >
+          <h1 className="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
             Smart Technology.{" "}
             <span className="text-primary">
               {displayedText}
               <span className="animate-pulse">|</span>
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl"
-          >
+          <p className="hero-description text-lg sm:text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl">
             Digital solutions and AI-enabled tools designed to scale modern businesses.
             We help you operate smarter, grow faster, and prepare for the future.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-wrap gap-4"
-          >
+          <div className="hero-buttons flex flex-wrap gap-4">
             <Button
               size="lg"
               onClick={() => scrollToSection("#contact")}
@@ -174,33 +115,18 @@ export function Hero() {
               <Play className="w-4 h-4 mr-2" />
               Learn More
             </Button>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
         
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="relative lg:block"
-        >
-          <motion.div
-            animate={{ 
-              y: [0, -30, 0],
-              x: [0, 20, 0]
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
+        <div className="hero-image relative lg:block">
+          <div className="hero-image-float">
             <img 
               src="/images/HeroWelcome.png" 
               alt="Hero Welcome" 
               className="w-full h-auto object-contain drop-shadow-2xl"
             />
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

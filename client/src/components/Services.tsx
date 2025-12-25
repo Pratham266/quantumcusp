@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Monitor, Cpu, Zap, Cloud, TrendingUp, Shield } from "lucide-react";
-import { motion } from "framer-motion";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import "./Services.css";
 
 const services = [
   {
@@ -41,35 +42,16 @@ const services = [
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
-};
-
 export function Services() {
+  const { elementRef: headerRef, isVisible: headerVisible } = useIntersectionObserver();
+  const { elementRef: gridRef, isVisible: gridVisible } = useIntersectionObserver();
+
   return (
     <section id="services" className="py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+        <div
+          ref={headerRef}
+          className={`services-header ${headerVisible ? "visible" : ""} text-center mb-16`}
         >
           <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
             What We Do
@@ -81,17 +63,14 @@ export function Services() {
             We provide comprehensive technology solutions that help businesses
             innovate, automate, and scale with confidence.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        <div
+          ref={gridRef}
+          className={`services-grid ${gridVisible ? "visible" : ""} grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6`}
         >
           {services.map((service, index) => (
-            <motion.div key={service.title} variants={itemVariants}>
+            <div key={service.title} className="service-card">
               <Card className="group relative overflow-hidden h-full bg-gradient-to-br from-primary/5 via-secondary/10 to-accent/10 hover:shadow-lg hover:-translate-y-1 hover:border-primary/40 hover:ring-1 hover:ring-primary/20 hover-elevate transition-all duration-300">
                 <CardContent className="p-6 lg:p-7">
                   <div className="w-12 h-12 rounded-full bg-primary/10 ring-1 ring-primary/20 flex items-center justify-center mb-4 transition-colors group-hover:bg-primary/15 group-hover:ring-primary/40">
@@ -105,9 +84,9 @@ export function Services() {
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

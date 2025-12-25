@@ -5,13 +5,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, ArrowRight, Loader2, CheckCircle } from "lucide-react";
-import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import "./Contact.css";
 import {
   Form,
   FormControl,
@@ -34,6 +35,8 @@ type ContactFormData = z.infer<typeof contactFormSchema>;
 export function Contact() {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { elementRef: leftRef, isVisible: leftVisible } = useIntersectionObserver();
+  const { elementRef: rightRef, isVisible: rightVisible } = useIntersectionObserver();
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -73,11 +76,9 @@ export function Contact() {
     <section id="contact" className="py-20 lg:py-28 bg-gradient-to-r from-[#FF7A30] to-[#FFB347]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
+          <div
+            ref={leftRef}
+            className={`contact-content-left ${leftVisible ? "visible" : ""}`}
           >
            
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-white">
@@ -104,22 +105,16 @@ export function Contact() {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+          <div
+            ref={rightRef}
+            className={`contact-content-right ${rightVisible ? "visible" : ""}`}
           >
             <Card className="rounded-3xl shadow-xl overflow-hidden border-none text-left">
               <CardContent className="p-8 lg:p-12 bg-white">
                 {isSubmitted ? (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-8"
-                  >
+                  <div className="contact-success text-center py-8">
                     <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
                       <CheckCircle className="w-8 h-8 text-primary" />
                     </div>
@@ -135,7 +130,7 @@ export function Contact() {
                     >
                       Send Another Message
                     </Button>
-                  </motion.div>
+                  </div>
                 ) : (
                   <Form {...form}>
                     <form
@@ -230,7 +225,7 @@ export function Contact() {
                 )}
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

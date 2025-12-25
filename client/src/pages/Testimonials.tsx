@@ -4,23 +4,9 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
 import { testimonials } from "@/lib/data";
 import { LiaQuoteRightSolid } from "react-icons/lia";
-
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
+import "./Testimonials.css";
 
 export default function Testimonials() {
   return (
@@ -35,12 +21,7 @@ export default function Testimonials() {
              </div>
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-20"
-            >
+            <div className="testimonials-header text-center mb-20">
               <Badge variant="outline" className="mb-4 text-primary border-primary/20 bg-primary/5 px-4 py-1 text-xs uppercase tracking-wider font-semibold">
                 Client Success Stories
               </Badge>
@@ -70,16 +51,11 @@ export default function Testimonials() {
                    <div className="text-sm text-muted-foreground font-medium">Years Experience</div>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="space-y-8"
-            >
+            <div className="testimonials-list space-y-8">
               {testimonials.map((study, index) => (
-                <motion.div key={study.id} variants={itemVariants}>
+                <div key={study.id} className="testimonial-card-wrapper">
                   <Link href={`/testimonials/${study.slug}`}>
                     <Card
                       className="group relative border border-border/40 shadow-sm hover:shadow-xl hover:border-orange-500 transition-all duration-300 cursor-pointer bg-card overflow-hidden"
@@ -163,9 +139,9 @@ export default function Testimonials() {
                       </CardContent>
                     </Card>
                   </Link>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
       </main>
@@ -173,3 +149,4 @@ export default function Testimonials() {
     </div>
   );
 }
+

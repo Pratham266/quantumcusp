@@ -1,14 +1,17 @@
-import { motion } from "framer-motion";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import "./About.css";
 
 export function About() {
+  const { elementRef: headerRef, isVisible: headerVisible } = useIntersectionObserver();
+  const { elementRef: contentRef, isVisible: contentVisible } = useIntersectionObserver();
+  const { elementRef: statsRef, isVisible: statsVisible } = useIntersectionObserver();
+
   return (
     <section id="about" className="py-20 lg:py-28 bg-card">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+        <div
+          ref={headerRef}
+          className={`about-header ${headerVisible ? "visible" : ""}`}
         >
           <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
             About Us
@@ -16,14 +19,11 @@ export function About() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-8">
             Building the Future, <span className="text-primary">Together</span>
           </h2>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="space-y-6 text-lg leading-relaxed text-muted-foreground"
+        <div
+          ref={contentRef}
+          className={`about-content ${contentVisible ? "visible" : ""} space-y-6 text-lg leading-relaxed text-muted-foreground`}
         >
           <p data-testid="text-about-1">
             QuantumCusp is a technology company focused on helping businesses operate
@@ -43,14 +43,11 @@ export function About() {
             of all sizes to build the digital capabilities they need to thrive
             in an increasingly connected world.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8"
+        <div
+          ref={statsRef}
+          className={`about-stats ${statsVisible ? "visible" : ""} mt-12 grid grid-cols-2 md:grid-cols-4 gap-8`}
         >
           {[
             { value: "50+", label: "Projects Delivered" },
@@ -65,7 +62,7 @@ export function About() {
               <div className="text-sm text-muted-foreground">{stat.label}</div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

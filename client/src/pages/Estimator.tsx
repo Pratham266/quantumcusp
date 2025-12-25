@@ -16,13 +16,13 @@ import {
   Building2,
   Loader2,
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import "./Estimator.css";
 import {
   Form,
   FormControl,
@@ -147,12 +147,7 @@ export default function Estimator() {
       <main className="pt-20">
         <section className="py-20 lg:py-28">
           <div className="max-w-4xl mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12"
-            >
+            <div className="estimator-header text-center mb-12">
               <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
                 Project Brief
               </span>
@@ -162,7 +157,7 @@ export default function Estimator() {
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
                 Share a few details so we can understand your goals, scope, and technical needs.
               </p>
-            </motion.div>
+            </div>
 
             <div className="flex justify-center gap-2 mb-12">
               {[1, 2, 3].map((s) => (
@@ -175,13 +170,11 @@ export default function Estimator() {
               ))}
             </div>
 
-            <AnimatePresence mode="wait">
+            <div className="estimator-content">
               {isSubmitted ? (
-                <motion.div
+                <div
                   key="success"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-12"
+                  className="estimator-success text-center py-12"
                 >
                   <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
                     <Check className="w-10 h-10 text-primary" />
@@ -211,14 +204,11 @@ export default function Estimator() {
                   >
                     Back to Home
                   </Button>
-                </motion.div>
+                </div>
               ) : step === 1 ? (
-                <motion.div
+                <div
                   key="step1"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
+                  className="estimator-step-container"
                 >
                   <h2 className="text-xl font-semibold mb-6 text-center">
                     What type of project are you planning?
@@ -253,14 +243,11 @@ export default function Estimator() {
                       </Card>
                     ))}
                   </div>
-                </motion.div>
+                </div>
               ) : step === 2 ? (
-                <motion.div
+                <div
                   key="step2"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
+                  className="estimator-step-container"
                 >
                   <h2 className="text-xl font-semibold mb-6 text-center">
                     What services do you need?
@@ -289,14 +276,11 @@ export default function Estimator() {
                   <p className="text-sm text-muted-foreground text-center mb-8">
                     Select all that apply to your project
                   </p>
-                </motion.div>
+                </div>
               ) : (
-                <motion.div
+                <div
                   key="step3"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
+                  className="estimator-step-container"
                 >
                   <h2 className="text-xl font-semibold mb-6 text-center">
                     Tell us more about your project
@@ -402,9 +386,9 @@ export default function Estimator() {
                       </Form>
                     </CardContent>
                   </Card>
-                </motion.div>
+                </div>
               )}
-            </AnimatePresence>
+            </div>
 
             {!isSubmitted && (
               <div className="flex justify-between mt-8">

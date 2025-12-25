@@ -1,5 +1,6 @@
 import { Check, Target, Layers, Users, Clock } from "lucide-react";
-import { motion } from "framer-motion";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import "./WhyQuantumCusp.css";
 
 const differentiators = [
   {
@@ -33,15 +34,16 @@ const benefits = [
 ];
 
 export function WhyQuantumCusp() {
+  const { elementRef: leftRef, isVisible: leftVisible } = useIntersectionObserver();
+  const { elementRef: rightRef, isVisible: rightVisible } = useIntersectionObserver();
+
   return (
     <section id="why-us" className="py-20 lg:py-28 bg-card">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
+          <div
+            ref={leftRef}
+            className={`why-content-left ${leftVisible ? "visible" : ""}`}
           >
             <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
               Why QuantumCusp
@@ -70,14 +72,11 @@ export function WhyQuantumCusp() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+          <div
+            ref={rightRef}
+            className={`why-content-right ${rightVisible ? "visible" : ""} grid grid-cols-1 sm:grid-cols-2 gap-6`}
           >
             {differentiators.map((item, index) => (
               <div
@@ -96,7 +95,7 @@ export function WhyQuantumCusp() {
                 </p>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

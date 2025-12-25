@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Clock, User, Calendar } from "lucide-react";
-import { motion } from "framer-motion";
 import { blogPosts } from "@/lib/data";
+import "./BlogPost.css";
 
 export default function BlogPost() {
   const params = useParams<{ slug: string }>();
@@ -40,11 +40,7 @@ export default function BlogPost() {
       <main className="pt-20">
         <article className="py-20 lg:py-28">
           <div className="max-w-3xl mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="blog-post-content">
               <Link href="/blog">
                 <Button
                   variant="ghost"
@@ -103,7 +99,7 @@ export default function BlogPost() {
                   </Button>
                 </Link>
               </div>
-            </motion.div>
+            </div>
           </div>
         </article>
       </main>
@@ -111,3 +107,4 @@ export default function BlogPost() {
     </div>
   );
 }
+

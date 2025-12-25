@@ -1,0 +1,42 @@
+/* Blog Page Animations */
+
+.blog-header {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.blog-featured {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.2s forwards;
+}
+
+.blog-grid-container {
+  opacity: 1;
+}
+
+.blog-card-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.blog-card-item:nth-child(1) { animation: fadeInUp 0.5s ease-out 0.1s forwards; }
+.blog-card-item:nth-child(2) { animation: fadeInUp 0.5s ease-out 0.2s forwards; }
+.blog-card-item:nth-child(3) { animation: fadeInUp 0.5s ease-out 0.3s forwards; }
+.blog-card-item:nth-child(4) { animation: fadeInUp 0.5s ease-out 0.4s forwards; }
+.blog-card-item:nth-child(5) { animation: fadeInUp 0.5s ease-out 0.5s forwards; }
+.blog-card-item:nth-child(6) { animation: fadeInUp 0.5s ease-out 0.6s forwards; }
+.blog-card-item:nth-child(7) { animation: fadeInUp 0.5s ease-out 0.7s forwards; }
+.blog-card-item:nth-child(8) { animation: fadeInUp 0.5s ease-out 0.8s forwards; }
+.blog-card-item:nth-child(9) { animation: fadeInUp 0.5s ease-out 0.9s forwards; }
+/* Add more if needed or use general delay */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

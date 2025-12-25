@@ -4,21 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { SiLinkedin } from "react-icons/si";
-import { motion } from "framer-motion";
 import { teamMembers } from "@/lib/data";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
+import "./Team.css";
 
 export default function Team() {
   return (
@@ -27,12 +14,7 @@ export default function Team() {
       <main className="pt-20">
         <section className="py-20 lg:py-28">
           <div className="max-w-7xl mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
+            <div className="team-header text-center mb-16">
               <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
                 Our Team
               </span>
@@ -43,16 +25,11 @@ export default function Team() {
                 Our leadership team brings together decades of experience in
                 technology, business strategy, and digital innovation.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            >
+            <div className="team-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {teamMembers.map((member, index) => (
-                <motion.div key={member.id} variants={itemVariants}>
+                <div key={member.id} className="team-card">
                   <Card
                     className="h-full"
                     data-testid={`card-team-member-${index}`}
@@ -100,9 +77,9 @@ export default function Team() {
                       </div>
                     </CardContent>
                   </Card>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
       </main>
@@ -110,3 +87,4 @@ export default function Team() {
     </div>
   );
 }
+

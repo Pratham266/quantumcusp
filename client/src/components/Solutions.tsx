@@ -1,7 +1,8 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Rocket, TrendingUp, Building2 } from "lucide-react";
-import { motion } from "framer-motion";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import "./Solutions.css";
 
 const solutions = [
   {
@@ -45,26 +46,10 @@ const solutions = [
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
-};
-
 export function Solutions() {
+  const { elementRef: headerRef, isVisible: headerVisible } = useIntersectionObserver();
+  const { elementRef: gridRef, isVisible: gridVisible } = useIntersectionObserver();
+
   const scrollToContact = () => {
     const element = document.querySelector("#contact");
     if (element) {
@@ -75,12 +60,9 @@ export function Solutions() {
   return (
     <section id="solutions" className="py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+        <div
+          ref={headerRef}
+          className={`solutions-header ${headerVisible ? "visible" : ""} text-center mb-16`}
         >
           <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
             Solutions
@@ -92,17 +74,14 @@ export function Solutions() {
             Whether you're launching a startup, scaling a growing business, or
             transforming an enterprise — we have the expertise to help.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        <div
+          ref={gridRef}
+          className={`solutions-grid ${gridVisible ? "visible" : ""} grid grid-cols-1 md:grid-cols-3 gap-8`}
         >
           {solutions.map((solution, index) => (
-            <motion.div key={solution.audience} variants={itemVariants}>
+            <div key={solution.audience} className="solution-card">
               <Card
                 className="group relative overflow-hidden h-full flex flex-col bg-gradient-to-br from-card to-muted/40 border border-card-border hover:border-primary/40 hover:ring-1 hover:ring-primary/20 hover:shadow-lg hover:-translate-y-1 hover-elevate transition-all duration-300 rounded-xl"
                 data-testid={`card-solution-${index}`}
@@ -145,9 +124,9 @@ export function Solutions() {
                   </button>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
