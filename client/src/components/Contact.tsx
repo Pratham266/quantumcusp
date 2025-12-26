@@ -90,21 +90,23 @@ export function Contact() {
               you. Let's start a conversation.
             </p>
 
-            <div className="bg-white rounded-[20px] p-3 pr-8 inline-flex items-center gap-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-orange-100 max-w-md w-full sm:w-auto">
+            <a 
+              href="mailto:support@quantumcusp.co"
+              className="bg-white rounded-[20px] p-3 pr-8 inline-flex items-center gap-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-orange-100 max-w-md w-full sm:w-auto hover:shadow-lg transition-all cursor-pointer group"
+            >
               <div className="w-14 h-14 rounded-[18px] bg-gradient-to-b from-[#FF853C] to-[#FFB95D] flex items-center justify-center shrink-0 shadow-orange-200 shadow-inner ring-1 ring-white/20">
                 <Mail className="w-7 h-7 text-white" strokeWidth={2.5} />
               </div>
               <div className="flex flex-col gap-0.5">
                 <p className="text-[#0F172A] font-semibold text-lg leading-none">Email us at</p>
-                <a
-                  href="mailto:hello@quantumcusp.co"
-                  className="text-[#FF7A30] text-lg font-medium leading-tight hover:text-[#E66010] transition-colors"
+                <span
+                  className="text-[#FF7A30] text-lg font-medium leading-tight group-hover:text-[#E66010] transition-colors"
                   data-testid="link-email"
                 >
-                  hello@quantumcusp.co
-                </a>
+                  support@quantumcusp.co  
+                </span>
               </div>
-            </div>
+            </a>
           </div>
 
           <div

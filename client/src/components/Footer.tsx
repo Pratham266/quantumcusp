@@ -101,11 +101,11 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:hello@quantumcusp.co"
+                  href="mailto:support@quantumcusp.co  "
                   className="text-sm text-gray-400 hover:text-[#FF6632] transition-colors"
                   data-testid="link-footer-email"
                 >
-                  hello@quantumcusp.co
+                  support@quantumcusp.co  
                 </a>
               </li>
               <li>
