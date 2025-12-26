@@ -82,7 +82,7 @@ export function Hero() {
             </span>
           </div>
 
-          <h1 className="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
+          <h1 className="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6 min-h-[5.0em] sm:min-h-[3.0em]">
             Smart Technology.{" "}
             <span className="text-primary" >
               {displayedText}
@@ -102,7 +102,7 @@ export function Hero() {
               className="bg-primary border-primary-border"
               data-testid="button-hero-get-started"
             >
-              Get Started
+             Connect With Us
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
             <Button
@@ -113,7 +113,7 @@ export function Hero() {
               data-testid="button-hero-learn-more"
             >
               <Play className="w-4 h-4 mr-2" />
-              Learn More
+              See What We Do
             </Button>
           </div>
         </div>

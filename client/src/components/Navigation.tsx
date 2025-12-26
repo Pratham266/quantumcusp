@@ -8,11 +8,12 @@ import "./Navigation.css";
 
 const navLinks = [
   { label: "Home", href: "/home", isAnchor: false },
+  { label: "About Us", href: "/about-us", isAnchor: false },
   { label: "Services", href: "/#services", isAnchor: true },
   { label: "Solutions", href: "/#solutions", isAnchor: true },
   { label: "Testimonials", href: "/testimonials", isAnchor: false },
   { label: "Blog", href: "/blog", isAnchor: false },
-  { label: "Team", href: "/team", isAnchor: false },
+  // { label: "Team", href: "/team", isAnchor: false },
 ];
 
 export function Navigation() {
@@ -95,13 +96,15 @@ export function Navigation() {
           className="flex items-center gap-2"
           data-testid="link-logo"
         >
-          <div className="w-10 h-10 rounded-md bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg">Q</span>
-          </div>
+          <img 
+            src={navBarFontColor ? "/LogoDark.svg" : "/LogoLight.svg"} 
+            alt="QuantumCusp Logo" 
+            className="w-10 h-10 object-contain" 
+          />
           <span
-            className={`font-bold text-xl tracking-tight ${navBarFontColor}`}
+            className={`font-serif font-bold text-3xl tracking-tight ${navBarFontColor}`}
           >
-            QuantumCusp
+            Quantum<span className="text-primary">Cusp</span>
           </span>
         </Link>
 

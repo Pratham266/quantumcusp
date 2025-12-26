@@ -5,11 +5,13 @@ import { Button } from "@/components/ui/button";
 
 
 const quickLinks = [
+    {label:"About",href:"/about-us",isAnchor:false},
   { label: "Services", href: "/#services", isAnchor: true },
   { label: "Solutions", href: "/#solutions", isAnchor: true },
   { label: "Testimonials", href: "/testimonials", isAnchor: false },
   { label: "Blog", href: "/blog", isAnchor: false },
-  { label: "Team", href: "/team", isAnchor: false },
+
+  // { label: "Team", href: "/team", isAnchor: false },
 ];
 
 const socialLinks = [
@@ -39,10 +41,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-md bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">Q</span>
-              </div>
-              <span className="font-bold text-xl tracking-tight text-white">QuantumCusp</span>
+              <img 
+                src="/LogoDark.svg" 
+                alt="QuantumCusp Logo" 
+                className="w-10 h-10 object-contain" 
+              />
+              <span className="font-serif font-bold text-3xl tracking-tight text-white">Quantum
+                <span className="text-primary">Cusp</span>
+              </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6" data-testid="text-footer-tagline">
               Smart technology solutions for modern businesses. Strategic, reliable,

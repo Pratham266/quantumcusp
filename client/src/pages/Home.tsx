@@ -17,7 +17,6 @@ export default function Home() {
         <Services />
         <WhyQuantumCusp />
         <Solutions />
-        <About />
         <Contact />
         <CallToAction />
       </main>
