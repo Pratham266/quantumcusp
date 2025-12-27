@@ -37,25 +37,20 @@ const projectTypes = [
     id: "mvp",
     icon: Rocket,
     title: "MVP / New Product",
-    description: "Build a minimum viable product from scratch",
-    timeline: "8-12 weeks",
-    priceRange: "$25K - $75K",
+    description: "Build a minimum viable product from scratch",   
   },
   {
     id: "scale",
     icon: TrendingUp,
     title: "Growth & Scale",
     description: "Optimize and scale existing systems",
-    timeline: "4-8 weeks",
-    priceRange: "$15K - $50K",
+
   },
   {
     id: "enterprise",
     icon: Building2,
     title: "Enterprise Solution",
     description: "Complex enterprise-grade systems",
-    timeline: "12-24 weeks",
-    priceRange: "$75K - $250K+",
   },
 ];
 
@@ -103,7 +98,7 @@ export default function Estimator() {
         email: data.email,
         message: `Project Type: ${projectType}\nServices: ${selectedServices.join(", ")}\nCompany: ${data.company || "N/A"}\n\n${data.message}`,
       };
-      return await apiRequest("POST", "https://quantumcusp-service.vercel.app/api/contact", payload);
+      return await apiRequest("POST", `${import.meta.env.VITE_BACKEND_URL}/api/contact`, payload);
     },
     onSuccess: () => {
       setIsSubmitted(true);
@@ -184,19 +179,7 @@ export default function Estimator() {
                     Thank you for your interest. Our team will review your project
                     details and get back to you within 24 hours.
                   </p>
-                  {selectedProject && (
-                    <Card className="max-w-md mx-auto mb-8">
-                      <CardContent className="p-6 text-left">
-                        <h3 className="font-semibold mb-2">Estimated Range</h3>
-                        <p className="text-2xl font-bold text-primary mb-2">
-                          {selectedProject.priceRange}
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          Timeline: {selectedProject.timeline}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  )}
+                  
                   <Button
                     variant="outline"
                     onClick={() => (window.location.href = "/")}
@@ -233,12 +216,6 @@ export default function Estimator() {
                           <p className="text-sm text-muted-foreground mb-4">
                             {type.description}
                           </p>
-                          <div className="text-xs text-muted-foreground">
-                            <p>{type.timeline}</p>
-                            <p className="font-medium text-foreground">
-                              {type.priceRange}
-                            </p>
-                          </div>
                         </CardContent>
                       </Card>
                     ))}

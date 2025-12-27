@@ -49,7 +49,7 @@ export function Contact() {
 
   const mutation = useMutation({
     mutationFn: async (data: ContactFormData) => {
-      return await apiRequest("POST", "https://quantumcusp-service.vercel.app/api/contact", data);
+      return await apiRequest("POST", `${import.meta.env.VITE_BACKEND_URL}/api/contact`, data);
     },
     onSuccess: () => {
       setIsSubmitted(true);
