@@ -51,12 +51,12 @@ export function About() {
                       <div className="w-60 h-auto rounded-2xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center border-4 border-background shadow-lg ring-1 ring-border overflow-hidden">
                           <img 
                             src="/images/CEO.jpeg" 
-                            alt="Ayushi Brahmbhatt" 
+                            alt="Ayushi Rao" 
                             className="w-full h-auto object-contain"
                           />
                       </div>
                       <div className="mt-4 text-center">
-                          <h4 className="font-bold text-lg">Ayushi Brahmbhatt</h4>
+                          <h4 className="font-bold text-lg">Ayushi Rao</h4>
                           <p className="text-sm text-muted-foreground font-medium">Founder & CEO</p>
                       </div>
                   </div>
@@ -69,7 +69,7 @@ export function About() {
                       <h3 className="text-2xl font-bold mb-4">Execution Matches Vision</h3>
                       <div className="space-y-4 text-muted-foreground leading-relaxed">
                           <p>
-                              QuantumCusp, started in 2023, is led by <strong>Ayushi Brahmbhatt</strong>, a founder who believes that execution matters as much as vision. With a background in building real systems for real businesses—from manufacturers and exporters to other growing companies—Ayushi started QuantumCusp to close the gap between “good ideas” and working products.
+                              QuantumCusp, started in 2023, is led by <strong>Ayushi Rao</strong>, a founder who believes that execution matters as much as vision. With a background in building real systems for real businesses—from manufacturers and exporters to other growing companies—Ayushi started QuantumCusp to close the gap between “good ideas” and working products.
                           </p>
                           <p>
                               She works closely with every client, translating business goals into clear roadmaps and guiding projects from first discussion to final delivery, ensuring the technology always serves the people who use it.
