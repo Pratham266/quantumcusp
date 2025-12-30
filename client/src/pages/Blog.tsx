@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -13,6 +14,27 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Technology Blog & Insights | QuantumCusp</title>
+        <meta 
+          name="description" 
+          content="Explore thought leadership on technology, business growth, and digital transformation. Expert insights on custom software development, AI, and business automation." 
+        />
+        <link rel="canonical" href="https://quantumcusp.co/blog" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://quantumcusp.co/blog" />
+        <meta property="og:title" content="Technology Blog & Insights | QuantumCusp" />
+        <meta property="og:description" content="Explore thought leadership on technology, business growth, and digital transformation." />
+        <meta property="og:image" content="https://quantumcusp.co/LogoDark.svg" />
+        <meta property="og:site_name" content="QuantumCusp" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Technology Blog & Insights | QuantumCusp" />
+        <meta name="twitter:description" content="Explore thought leadership on technology, business growth, and digital transformation." />
+        <meta name="twitter:image" content="https://quantumcusp.co/LogoDark.svg" />
+      </Helmet>
+      
       <Navigation />
       <main className="pt-20">
         <section className="py-20 lg:py-28">

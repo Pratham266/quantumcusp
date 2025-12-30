@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -138,6 +139,27 @@ export default function Estimator() {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Project Estimator - Get Started with QuantumCusp</title>
+        <meta 
+          name="description" 
+          content="Tell us about your project and get a custom software development estimate. Share your goals, scope, and technical needs for MVP, growth, or enterprise solutions." 
+        />
+        <link rel="canonical" href="https://quantumcusp.co/estimator" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://quantumcusp.co/estimator" />
+        <meta property="og:title" content="Project Estimator - Get Started with QuantumCusp" />
+        <meta property="og:description" content="Tell us about your project and get a custom software development estimate." />
+        <meta property="og:image" content="https://quantumcusp.co/LogoDark.svg" />
+        <meta property="og:site_name" content="QuantumCusp" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Project Estimator - Get Started with QuantumCusp" />
+        <meta name="twitter:description" content="Tell us about your project and get a custom software development estimate." />
+        <meta name="twitter:image" content="https://quantumcusp.co/LogoDark.svg" />
+      </Helmet>
+      
       <Navigation />
       <main className="pt-20">
         <section className="py-20 lg:py-28">

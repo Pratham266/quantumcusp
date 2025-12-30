@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -9,8 +10,56 @@ import { LiaQuoteRightSolid } from "react-icons/lia";
 import "./Testimonials.css";
 
 export default function Testimonials() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": testimonials.map((testimonial, index) => ({
+      "@type": "Review",
+      "position": index + 1,
+      "itemReviewed": {
+        "@type": "Organization",
+        "name": "QuantumCusp"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": testimonial.rating || 5,
+        "bestRating": 5
+      },
+      "author": {
+        "@type": "Person",
+        "name": testimonial.testimonial?.author || testimonial.client
+      },
+      "reviewBody": testimonial.testimonial?.quote || testimonial.challenge
+    }))
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-primary/10">
+      <Helmet>
+        <title>Client Success Stories & Testimonials | QuantumCusp</title>
+        <meta 
+          name="description" 
+          content="See how QuantumCusp has helped businesses achieve extraordinary outcomes through innovative technology solutions. Real client testimonials and measurable results." 
+        />
+        <link rel="canonical" href="https://quantumcusp.co/testimonials" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://quantumcusp.co/testimonials" />
+        <meta property="og:title" content="Client Success Stories & Testimonials | QuantumCusp" />
+        <meta property="og:description" content="See how QuantumCusp has helped businesses achieve extraordinary outcomes through innovative technology solutions." />
+        <meta property="og:image" content="https://quantumcusp.co/LogoDark.svg" />
+        <meta property="og:site_name" content="QuantumCusp" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Client Success Stories & Testimonials | QuantumCusp" />
+        <meta name="twitter:description" content="See how QuantumCusp has helped businesses achieve extraordinary outcomes through innovative technology solutions." />
+        <meta name="twitter:image" content="https://quantumcusp.co/LogoDark.svg" />
+        
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+      
       <Navigation />
       <main className="pt-20">
         <section className="py-20 lg:py-28 relative overflow-hidden">

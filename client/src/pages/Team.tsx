@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,6 +11,27 @@ import "./Team.css";
 export default function Team() {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Our Team - Meet the Experts | QuantumCusp</title>
+        <meta 
+          name="description" 
+          content="Meet the QuantumCusp leadership team. Decades of experience in technology, business strategy, and digital innovation driving custom software solutions." 
+        />
+        <link rel="canonical" href="https://quantumcusp.co/team" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://quantumcusp.co/team" />
+        <meta property="og:title" content="Our Team - Meet the Experts | QuantumCusp" />
+        <meta property="og:description" content="Meet the QuantumCusp leadership team. Decades of experience in technology, business strategy, and digital innovation." />
+        <meta property="og:image" content="https://quantumcusp.co/LogoDark.svg" />
+        <meta property="og:site_name" content="QuantumCusp" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Team - Meet the Experts | QuantumCusp" />
+        <meta name="twitter:description" content="Meet the QuantumCusp leadership team. Decades of experience in technology, business strategy, and digital innovation." />
+        <meta name="twitter:image" content="https://quantumcusp.co/LogoDark.svg" />
+      </Helmet>
+      
       <Navigation />
       <main className="pt-20">
         <section className="py-20 lg:py-28">
