@@ -8,6 +8,7 @@ import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { CallToAction } from "@/components/CallToAction";
+import { FAQ } from "@/components/FAQ";
 
 export default function Home() {
   const structuredData = {
@@ -56,20 +57,20 @@ export default function Home() {
     <div className="min-h-screen">
       <Helmet>
         {/* Primary Meta Tags */}
-        <title>Custom Software Development India | QuantumCusp</title>
+        <title>Custom Software Development | QuantumCusp - SMB Solutions</title>
         <meta 
           name="description" 
-          content="QuantumCusp builds custom software development in India for SMBs. Inventory systems, business automation, WhatsApp CRM. Smart technology for real business growth." 
+          content="QuantumCusp delivers custom software development in India for SMBs. Build inventory management software, WhatsApp automation, order tracking systems. Ahmedabad-based." 
         />
         <link rel="canonical" href="https://quantumcusp.co/" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://quantumcusp.co/" />
-        <meta property="og:title" content="Custom Software Development India | QuantumCusp" />
+        <meta property="og:title" content="Custom Software Development | QuantumCusp - SMB Solutions" />
         <meta 
           property="og:description" 
-          content="QuantumCusp builds custom software development in India for SMBs. Inventory systems, business automation, WhatsApp CRM." 
+          content="QuantumCusp delivers custom software development in India for SMBs. Build inventory management software, WhatsApp automation, order tracking systems." 
         />
         <meta property="og:image" content="https://quantumcusp.co/LogoDark.svg" />
         <meta property="og:site_name" content="QuantumCusp" />
@@ -78,20 +79,20 @@ export default function Home() {
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://quantumcusp.co/" />
-        <meta name="twitter:title" content="Custom Software Development India | QuantumCusp" />
+        <meta name="twitter:title" content="Custom Software Development | QuantumCusp - SMB Solutions" />
         <meta 
           name="twitter:description" 
-          content="QuantumCusp builds custom software development in India for SMBs. Inventory systems, business automation, WhatsApp CRM." 
+          content="QuantumCusp delivers custom software development in India for SMBs. Build inventory management software, WhatsApp automation, order tracking systems." 
         />
         <meta name="twitter:image" content="https://quantumcusp.co/LogoDark.svg" />
         
         {/* Additional SEO Meta Tags */}
-        <meta name="keywords" content="custom software development India, business automation India, inventory management system, WhatsApp CRM, SMB software solutions, AI-enabled tools India" />
+        <meta name="keywords" content="custom software development India, inventory management software India, business automation Ahmedabad, WhatsApp business automation for SMB, order tracking system India, admin portal development, coaching institute software India" />
         <meta name="author" content="QuantumCusp" />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
-        <meta name="geo.region" content="IN" />
-        <meta name="geo.placename" content="India" />
+        <meta name="geo.region" content="IN-GJ" />
+        <meta name="geo.placename" content="Ahmedabad, Gujarat, India" />
         
         {/* Structured Data */}
         <script type="application/ld+json">
@@ -105,6 +106,7 @@ export default function Home() {
         <Services />
         <WhyQuantumCusp />
         <Solutions />
+        <FAQ />
         <Contact />
         <CallToAction />
       </main>

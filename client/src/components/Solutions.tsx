@@ -1,48 +1,56 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Rocket, TrendingUp, Building2 } from "lucide-react";
+import { ArrowRight, Package, Sparkles, Rocket } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import "./Solutions.css";
 
 const solutions = [
   {
+    icon: Package,
+    audience: "Retail & E-commerce SMBs",
+    title: "Inventory & Order Management Systems",
+    description:
+      "Complete inventory and order management solutions for growing businesses. Real-time stock tracking, automated reordering, multi-channel order management, and seamless integration with your existing systems.",
+    outcomes: [
+      "Real-time inventory tracking across locations",
+      "Automated low-stock alerts and reordering",
+      "Multi-channel order synchronization",
+      "Supplier and vendor management",
+      "Sales analytics and reporting dashboards",
+    ],
+    keywords: "inventory management software, order tracking system, warehouse management",
+  },
+  {
+    icon: Sparkles,
+    audience: "Growing SMBs",
+    title: "AI Automation & Business Intelligence",
+    description:
+      "Transform your business with AI-powered automation and intelligent workflows. Automate repetitive tasks, gain data-driven insights, implement WhatsApp business automation, and streamline operations with smart AI tools.",
+    outcomes: [
+      "WhatsApp business automation and chatbots",
+      "Automated customer communication workflows",
+      "AI-powered data analytics and insights",
+      "Intelligent document processing",
+      "Predictive analytics for business decisions",
+      "Custom AI integrations for your workflows",
+    ],
+    keywords: "AI automation, WhatsApp business automation, business intelligence, workflow automation",
+  },
+  {
     icon: Rocket,
-    audience: "Startups",
-    title: "Launch & Scale Fast",
+    audience: "Product Companies & Startups",
+    title: "SaaS Product Development",
     description:
-      "Get to market quickly with robust, scalable technology that grows with your vision.",
+      "Build scalable SaaS products from concept to launch. Cloud-native architecture, multi-tenant systems, subscription management, and modern tech stack for fast-growing product companies and startups.",
     outcomes: [
-      "MVP development in weeks, not months",
-      "Scalable architecture from day one",
-      "Cost-effective cloud infrastructure",
-      "Technical advisory and guidance",
+      "MVP development and rapid prototyping",
+      "Scalable cloud-native architecture",
+      "Multi-tenant SaaS infrastructure",
+      "Subscription and billing management",
+      "API development and integrations",
+      "DevOps and continuous deployment",
     ],
-  },
-  {
-    icon: TrendingUp,
-    audience: "Growing Businesses",
-    title: "Accelerate Growth",
-    description:
-      "Optimize operations and unlock new opportunities with smart technology investments.",
-    outcomes: [
-      "Process automation and efficiency",
-      "Data-driven decision making",
-      "Integration of existing systems",
-      "Custom tools for your workflow",
-    ],
-  },
-  {
-    icon: Building2,
-    audience: "Enterprises",
-    title: "Transform & Innovate",
-    description:
-      "Modernize legacy systems and implement enterprise-grade solutions that drive competitive advantage.",
-    outcomes: [
-      "Digital transformation strategy",
-      "Legacy system modernization",
-      "Enterprise AI integration",
-      "Security and compliance focus",
-    ],
+    keywords: "SaaS development, product development, cloud software, startup MVP",
   },
 ];
 
@@ -65,14 +73,14 @@ export function Solutions() {
           className={`solutions-header ${headerVisible ? "visible" : ""} text-center mb-16`}
         >
           <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
-            Solutions
+            Industry Solutions
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-            Tailored for Your Stage
+            Built for{" "}
+            <span className="text-primary">SMBs & Product Companies</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            Whether you're launching a startup, scaling a growing business, or
-            transforming an enterprise — we have the expertise to help.
+            Custom software development for growing businesses. From inventory management and AI automation to SaaS products and business process automation for modern SMBs.
           </p>
         </div>
 
@@ -120,7 +128,7 @@ export function Solutions() {
                     className="text-primary text-sm font-medium flex items-center gap-1 hover:gap-2 transition-all"
                     data-testid={`link-solution-cta-${index}`}
                   >
-                    Learn More <ArrowRight className="w-4 h-4" />
+                    Connect <ArrowRight className="w-4 h-4" />
                   </button>
                 </CardContent>
               </Card>

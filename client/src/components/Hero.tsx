@@ -78,21 +78,17 @@ export function Hero() {
         <div className="hero-content max-w-3xl">
           <div className="hero-badge">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary-foreground text-sm font-medium mb-6 backdrop-blur-sm border border-primary/30">
-              Future-Ready Technology Partner
+              Ahmedabad-Based Software Development Partner
             </span>
           </div>
 
-          <h1 className="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6 min-h-[5.0em] sm:min-h-[3.0em]">
-            Smart Technology.{" "}
-            <span className="text-primary" >
-              {displayedText}
-              <span className="animate-pulse">|</span>
-            </span>
+          <h1 className="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
+            Custom Software Development{" "}
+            <span className="text-primary">for Growing SMBs</span>
           </h1>
 
           <p className="hero-description text-lg sm:text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl">
-            Digital solutions and AI-enabled tools designed to scale modern businesses.
-            We help you operate smarter, grow faster, and prepare for the future.
+            Build inventory management systems, AI-powered automation, and scalable SaaS products for growing SMBs. Transform your business with custom software development, WhatsApp automation, and intelligent workflows.
           </p>
 
           <div className="hero-buttons flex flex-wrap gap-4">
@@ -102,7 +98,7 @@ export function Hero() {
               className="bg-primary border-primary-border"
               data-testid="button-hero-get-started"
             >
-             Connect With Us
+             Get Free Consultation
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
             <Button
@@ -113,7 +109,7 @@ export function Hero() {
               data-testid="button-hero-learn-more"
             >
               <Play className="w-4 h-4 mr-2" />
-              See What We Do
+              View Our Services
             </Button>
           </div>
         </div>
@@ -122,7 +118,7 @@ export function Hero() {
           <div className="hero-image-float">
             <img 
               src="/images/HeroWelcome.png" 
-              alt="Hero Welcome" 
+              alt="Custom software development India for SMBs - QuantumCusp" 
               className="w-full h-auto object-contain drop-shadow-2xl"
             />
           </div>

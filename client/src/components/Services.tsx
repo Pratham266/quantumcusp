@@ -1,44 +1,50 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Monitor, Cpu, Zap, Cloud, TrendingUp, Shield } from "lucide-react";
+import { Package, MessageSquare, LayoutDashboard, Cloud, TrendingUp, Shield } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import "./Services.css";
 
 const services = [
   {
-    icon: Monitor,
-    title: "Digital Product Development",
+    icon: Package,
+    title: "Inventory Management Software India",
     description:
-      "Build exceptional digital products from concept to launch. Web applications, mobile apps, and enterprise platforms designed for scale.",
+      "Custom inventory management software built for Indian SMBs. Real-time stock tracking, automated reordering, barcode scanning, and multi-location support. Perfect for retailers, manufacturers, and distributors managing inventory across India.",
+    keywords: "inventory management software India, stock tracking system, warehouse management",
   },
   {
-    icon: Cpu,
-    title: "AI-Enabled Tools",
+    icon: MessageSquare,
+    title: "WhatsApp Business Automation Ahmedabad",
     description:
-      "Integrate artificial intelligence where it creates real value. Smart automation, data insights, and intelligent workflows.",
+      "WhatsApp business automation for SMBs to streamline customer communication. Automated order confirmations, payment reminders, customer support chatbots, and broadcast messaging. Boost sales with WhatsApp CRM integration.",
+    keywords: "WhatsApp business automation for SMB, WhatsApp CRM India, automated messaging",
   },
   {
-    icon: Zap,
-    title: "Business Automation",
+    icon: LayoutDashboard,
+    title: "Custom Admin Portals",
     description:
-      "Streamline operations with custom automation solutions. Reduce manual work and increase efficiency across your organization.",
+      "Build powerful custom admin portals for coaching institutes and businesses. Student management, fee tracking, attendance systems, course management, and parent portals. Tailored admin dashboards for complete business control.",
+    keywords: "custom admin portal development, coaching institute software India, student management system",
   },
   {
     icon: Cloud,
-    title: "SaaS & Platform Solutions",
+    title: "Order Tracking Systems",
     description:
-      "Launch scalable software-as-a-service products. Cloud-native architecture built for growth and reliability.",
+      "Real-time order tracking systems for e-commerce and logistics. Customer order status updates, delivery tracking, automated notifications, and vendor management. Improve customer satisfaction with transparent order management.",
+    keywords: "order tracking system India, delivery management software, logistics tracking",
   },
   {
     icon: TrendingUp,
-    title: "Growth & Optimization",
+    title: "Business Process Automation",
     description:
-      "Data-driven strategies to accelerate your business growth. Performance optimization and conversion improvement.",
+      "Automate repetitive business processes to save time and reduce errors. Invoice generation, payment processing, report automation, and workflow management. Custom software development in India for operational efficiency.",
+    keywords: "business automation Ahmedabad, process automation India, workflow management",
   },
   {
     icon: Shield,
-    title: "Enterprise Security",
+    title: "Secure Cloud Solutions",
     description:
-      "Protect your business with robust security measures. Compliance-ready solutions for modern enterprises.",
+      "Cloud-based software solutions with enterprise-grade security. Data backup, disaster recovery, scalable infrastructure, and compliance-ready systems. Affordable cloud hosting for Indian businesses.",
+    keywords: "cloud software India, secure cloud solutions, SaaS development",
   },
 ];
 
@@ -54,14 +60,14 @@ export function Services() {
           className={`services-header ${headerVisible ? "visible" : ""} text-center mb-16`}
         >
           <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
-            What We Do
+            Our Services
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-            Services Built for Growth
+            Custom Software Development{" "}
+            <span className="text-primary">for Every Business Need</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            We provide comprehensive technology solutions that help businesses
-            innovate, automate, and scale with confidence.
+            From inventory management and AI automation to SaaS products and business intelligence, we deliver tailored solutions for SMBs, product companies, and growing businesses.
           </p>
         </div>
 
