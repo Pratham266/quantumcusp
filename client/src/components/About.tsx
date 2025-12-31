@@ -1,12 +1,18 @@
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import "./About.css";
 
-export function About() {
+interface AboutProps {
+  asPage?: boolean; // If true, use h1 for standalone page; otherwise h2 for section
+}
+
+export function About({ asPage = false }: AboutProps) {
   const { elementRef: headerRef, isVisible: headerVisible } = useIntersectionObserver();
   const { elementRef: contentRef, isVisible: contentVisible } = useIntersectionObserver();
   const { elementRef: statsRef, isVisible: statsVisible } = useIntersectionObserver();
   const { elementRef: missionRef, isVisible: missionVisible } = useIntersectionObserver();
   const { elementRef: ceoRef, isVisible: ceoVisible } = useIntersectionObserver();
+
+  const HeadingTag = asPage ? 'h1' : 'h2';
 
   return (
     <section id="about" className="py-20 lg:py-28 bg-card">
@@ -18,9 +24,9 @@ export function About() {
           <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
             About Us
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            Building the Future, <span className="text-primary">Together</span>
-          </h2>
+          <HeadingTag className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+            QuantumCusp <span className="text-primary">About Us</span>
+          </HeadingTag>
         </div>
 
         

@@ -41,7 +41,7 @@ export default function Team() {
                 Our Team
               </span>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-                Meet the <span className="text-primary">Experts</span>
+                QuantumCusp <span className="text-primary">Team</span>
               </h1>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
                 Our leadership team brings together decades of experience in

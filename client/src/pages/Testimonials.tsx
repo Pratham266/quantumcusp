@@ -76,8 +76,7 @@ export default function Testimonials() {
               </Badge>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-foreground">
-                Transforming Businesses with <br />
-                <span className="text-primary">Measurable Results</span>
+                QuantumCusp <span className="text-primary">Client Success Stories</span>
               </h1>
               
               <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-12">

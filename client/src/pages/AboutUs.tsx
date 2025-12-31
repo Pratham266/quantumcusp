@@ -55,7 +55,7 @@ export default function AboutUs() {
       
       <Navigation />
       <main className="pt-20">
-        <About />
+        <About asPage={true} />
       </main>
       <Footer />
     </div>

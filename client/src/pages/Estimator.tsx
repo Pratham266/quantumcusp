@@ -169,7 +169,7 @@ export default function Estimator() {
                 Project Brief
               </span>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-                Tell Us <span className="text-primary">About Your Project</span>
+                QuantumCusp <span className="text-primary">Project Estimator</span>
               </h1>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
                 Share a few details so we can understand your goals, scope, and technical needs.

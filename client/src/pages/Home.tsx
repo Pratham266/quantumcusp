@@ -60,7 +60,7 @@ export default function Home() {
         <title>Custom Software Development | QuantumCusp - SMB Solutions</title>
         <meta 
           name="description" 
-          content="QuantumCusp delivers custom software development in India for SMBs. Build inventory management software, WhatsApp automation, order tracking systems. Ahmedabad-based." 
+          content="QuantumCusp builds Custom Software Development, Inventory Management Software, WhatsApp Business Automation, Order Tracking Systems, Admin Portals & Websites, Lead Management Tools, AI Automation system for SMBs. quantumcusp.co" 
         />
         <link rel="canonical" href="https://quantumcusp.co/" />
         

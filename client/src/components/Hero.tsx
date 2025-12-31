@@ -83,8 +83,8 @@ export function Hero() {
           </div>
 
           <h1 className="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
-            Custom Software Development{" "}
-            <span className="text-primary">for Growing SMBs</span>
+            QuantumCusp{" "}
+            <span className="text-primary">Custom Software Development</span>
           </h1>
 
           <p className="hero-description text-lg sm:text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl">
