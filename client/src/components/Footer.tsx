@@ -1,5 +1,5 @@
 import { Link,useLocation } from "wouter";
-import { SiLinkedin, SiX, SiGithub } from "react-icons/si";
+import { SiLinkedin,SiInstagram, SiFacebook } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 
 
@@ -16,8 +16,8 @@ const quickLinks = [
 
 const socialLinks = [
   { icon: SiLinkedin, label: "LinkedIn", href: "#" },
-  { icon: SiX, label: "X", href: "#" },
-  { icon: SiGithub, label: "GitHub", href: "#" },
+  { icon: SiInstagram, label: "Instagram", href: "#" },
+  { icon: SiFacebook, label: "Facebook", href: "#" },
 ];
 
 export function Footer() {
