@@ -13,7 +13,7 @@ const services = [
   },
   {
     icon: MessageSquare,
-    title: "WhatsApp Business Automation Ahmedabad",
+    title: "WhatsApp Business Automation",
     description:
       "WhatsApp business automation for SMBs to streamline customer communication. Automated order confirmations, payment reminders, customer support chatbots, and broadcast messaging. Boost sales with WhatsApp CRM integration.",
     keywords: "WhatsApp business automation for SMB, WhatsApp CRM India, automated messaging",
@@ -37,7 +37,7 @@ const services = [
     title: "Business Process Automation",
     description:
       "Automate repetitive business processes to save time and reduce errors. Invoice generation, payment processing, report automation, and workflow management. Custom software development in India for operational efficiency.",
-    keywords: "business automation Ahmedabad, process automation India, workflow management",
+    keywords: "business automation, process automation India, workflow management",
   },
   {
     icon: Shield,

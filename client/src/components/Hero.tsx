@@ -78,7 +78,7 @@ export function Hero() {
         <div className="hero-content max-w-3xl">
           <div className="hero-badge">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary-foreground text-sm font-medium mb-6 backdrop-blur-sm border border-primary/30">
-              Ahmedabad-Based Software Development Partner
+              Software Development Partner
             </span>
           </div>
 

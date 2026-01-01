@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "Can you build WhatsApp business automation for small businesses?",
-    answer: "Yes! We specialize in WhatsApp business automation for SMBs in Ahmedabad and across India. Our solutions include automated order confirmations, payment reminders, customer support chatbots, broadcast messaging, and WhatsApp CRM integration. This helps small businesses streamline customer communication, reduce manual work, and boost sales through automated WhatsApp messaging.",
+    answer: "Yes! We specialize in WhatsApp business automation for SMBs in and across India. Our solutions include automated order confirmations, payment reminders, customer support chatbots, broadcast messaging, and WhatsApp CRM integration. This helps small businesses streamline customer communication, reduce manual work, and boost sales through automated WhatsApp messaging.",
   },
   {
     question: "Can you build AI automation and intelligent workflows?",

@@ -87,12 +87,12 @@ export default function Home() {
         <meta name="twitter:image" content="https://quantumcusp.co/LogoDark.svg" />
         
         {/* Additional SEO Meta Tags */}
-        <meta name="keywords" content="custom software development India, inventory management software India, business automation Ahmedabad, WhatsApp business automation for SMB, order tracking system India, admin portal development, coaching institute software India" />
+        <meta name="keywords" content="custom software development India, inventory management software India, business automation, WhatsApp business automation for SMB, order tracking system India, admin portal development, coaching institute software India" />
         <meta name="author" content="QuantumCusp" />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
         <meta name="geo.region" content="IN-GJ" />
-        <meta name="geo.placename" content="Ahmedabad, Gujarat, India" />
+        <meta name="geo.placename" content="Gujarat, India" />
         
         {/* Structured Data */}
         <script type="application/ld+json">
