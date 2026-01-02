@@ -6,22 +6,22 @@ const differentiators = [
   {
     icon: Target,
     title: "Strategic Thinking",
-    description: "Technology decisions aligned with your business goals",
+    description: "Custom software aligned with your business goals",
   },
   {
     icon: Layers,
     title: "Scalable Architecture",
-    description: "Solutions built to grow with your business",
+    description: "SaaS solutions built to grow with your business",
   },
   {
     icon: Users,
     title: "Long-term Partnerships",
-    description: "Committed partners invested in your success",
+    description: "Committed engineering teams invested in your success",
   },
   {
     icon: Clock,
-    title: "Practical AI Adoption",
-    description: "AI that delivers real value, not just hype",
+    title: "Generative AI Integration",
+    description: "AI solutions that deliver real business value",
   },
 ];
 
@@ -49,14 +49,10 @@ export function WhyQuantumCusp() {
               Why QuantumCusp
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-              Technology That{" "}
-              <span className="text-primary">Drives Results</span>
+              Strategic <span className="text-primary">Custom Software</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              We're not just technology providers — we're strategic partners
-              committed to your long-term success. Our approach combines deep
-              technical expertise with a genuine understanding of business
-              challenges.
+              We're not just developers — we're strategic partners building scalable software and AI solutions committed to your long-term success. Our approach combines deep engineering expertise with business intelligence.
             </p>
             <ul className="space-y-4">
               {benefits.map((benefit, index) => (

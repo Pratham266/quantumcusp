@@ -6,45 +6,45 @@ import "./Services.css";
 const services = [
   {
     icon: Package,
-    title: "Inventory Management Software India",
+    title: "Scalable AI Solutions",
     description:
-      "Custom inventory management software built for Indian SMBs. Real-time stock tracking, automated reordering, barcode scanning, and multi-location support. Perfect for retailers, manufacturers, and distributors managing inventory across India.",
-    keywords: "inventory management software India, stock tracking system, warehouse management",
+      "Transform your business with Generative Intelligence and custom AI solutions. Automate workflows, enhance decision-making, and build intelligent systems that scale with your growth. Expert software development for the future.",
+    keywords: "AI solutions, generative intelligence, custom software, digital engineering",
   },
   {
     icon: MessageSquare,
-    title: "WhatsApp Business Automation",
+    title: "WhatsApp Automation for SMBs",
     description:
-      "WhatsApp business automation for SMBs to streamline customer communication. Automated order confirmations, payment reminders, customer support chatbots, and broadcast messaging. Boost sales with WhatsApp CRM integration.",
-    keywords: "WhatsApp business automation for SMB, WhatsApp CRM India, automated messaging",
+      "Streamline customer communication with powerful WhatsApp Business automation. Automated order updates, intelligent chatbots, and seamless CRM integration. Drive sales and improve engagement.",
+    keywords: "WhatsApp automation, business automation, CRM integration, digital solutions",
   },
   {
     icon: LayoutDashboard,
-    title: "Custom Admin Portals",
+    title: "Custom Engineering Team",
     description:
-      "Build powerful custom admin portals for coaching institutes and businesses. Student management, fee tracking, attendance systems, course management, and parent portals. Tailored admin dashboards for complete business control.",
-    keywords: "custom admin portal development, coaching institute software India, student management system",
+      "Dedicated custom engineering teams for your specialized projects. From complex admin portals to bespoke business applications, we deliver robust, scalable software tailored to your specific needs.",
+    keywords: "custom engineering, software development team, bespoke applications, scalable SaaS",
   },
   {
     icon: Cloud,
-    title: "Order Tracking Systems",
+    title: "Scalable SaaS Development",
     description:
-      "Real-time order tracking systems for e-commerce and logistics. Customer order status updates, delivery tracking, automated notifications, and vendor management. Improve customer satisfaction with transparent order management.",
-    keywords: "order tracking system India, delivery management software, logistics tracking",
+      "Build market-ready SaaS products with our end-to-end software development services. Cloud-native architecture, secure infrastructure, and rapid deployment for your digital product ideas.",
+    keywords: "scalable SaaS, cloud solutions, product development, software engineering",
   },
   {
     icon: TrendingUp,
     title: "Business Process Automation",
     description:
-      "Automate repetitive business processes to save time and reduce errors. Invoice generation, payment processing, report automation, and workflow management. Custom software development in India for operational efficiency.",
-    keywords: "business automation, process automation India, workflow management",
+      "Optimize your operations with custom automation tools. Reduce manual effort and increase efficiency with tailored software solutions designed for your unique business processes.",
+    keywords: "business solutions, process automation, operational efficiency, custom tools",
   },
   {
     icon: Shield,
-    title: "Secure Cloud Solutions",
+    title: "Enterprise-Grade Security",
     description:
-      "Cloud-based software solutions with enterprise-grade security. Data backup, disaster recovery, scalable infrastructure, and compliance-ready systems. Affordable cloud hosting for Indian businesses.",
-    keywords: "cloud software India, secure cloud solutions, SaaS development",
+      "Secure software solutions that protect your data and business. Compliance-ready architecture, regular security audits, and robust data protection for peace of mind.",
+    keywords: "secure software, enterprise security, data protection, digital safety",
   },
 ];
 
@@ -63,11 +63,11 @@ export function Services() {
             Our Services
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-            Custom Software Development{" "}
-            <span className="text-primary">for Every Business Need</span>
+            Global Software Solutions{" "}
+            <span className="text-primary">for Digital Business</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            From inventory management and AI automation to SaaS products and business intelligence, we deliver tailored solutions for SMBs, product companies, and growing businesses.
+            From custom software development to AI automation, we deliver scalable digital engineering solutions for SMBs and enterprises worldwide.
           </p>
         </div>
 
@@ -82,9 +82,9 @@ export function Services() {
                   <div className="w-12 h-12 rounded-full bg-primary/10 ring-1 ring-primary/20 flex items-center justify-center mb-4 transition-colors group-hover:bg-primary/15 group-hover:ring-primary/40">
                     <service.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-lg font-semibold tracking-tight mb-1">
+                  <h2 className="text-lg font-semibold tracking-tight mb-1">
                     {service.title}
-                  </h3>
+                  </h2>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {service.description}
                   </p>

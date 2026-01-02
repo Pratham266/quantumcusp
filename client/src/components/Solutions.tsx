@@ -76,11 +76,11 @@ export function Solutions() {
             Industry Solutions
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-            Built for{" "}
+            Software Solutions for{" "}
             <span className="text-primary">SMBs & Product Companies</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            Custom software development for growing businesses. From inventory management and AI automation to SaaS products and business process automation for modern SMBs.
+            Custom software development for growing businesses. From inventory management and AI automation to SaaS products and business process automation for global SMBs.
           </p>
         </div>
 

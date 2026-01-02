@@ -91,7 +91,7 @@ export function Contact() {
             </p>
 
             <a 
-              href="mailto:support@quantumcusp.co"
+              href="mailto:hello@quantumcusp.co"
               className="bg-white rounded-[20px] p-3 pr-8 inline-flex items-center gap-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-orange-100 max-w-md w-full sm:w-auto hover:shadow-lg transition-all cursor-pointer group"
             >
               <div className="w-14 h-14 rounded-[18px] bg-gradient-to-b from-[#FF853C] to-[#FFB95D] flex items-center justify-center shrink-0 shadow-orange-200 shadow-inner ring-1 ring-white/20">
@@ -103,7 +103,7 @@ export function Contact() {
                   className="text-[#FF7A30] text-lg font-medium leading-tight group-hover:text-[#E66010] transition-colors"
                   data-testid="link-email"
                 >
-                  support@quantumcusp.co  
+                  hello@quantumcusp.co  
                 </span>
               </div>
             </a>

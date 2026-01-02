@@ -15,9 +15,9 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { icon: SiLinkedin, label: "LinkedIn", href: "#" },
-  { icon: SiInstagram, label: "Instagram", href: "#" },
-  { icon: SiFacebook, label: "Facebook", href: "#" },
+  // { icon: SiLinkedin, label: "LinkedIn", href: "" },
+  { icon: SiInstagram, label: "Instagram", href: "https://www.instagram.com/quantumcusp" },
+  { icon: SiFacebook, label: "Facebook", href: "https://www.facebook.com/profile.php?id=61585557312594" },
 ];
 
 export function Footer() {
@@ -51,8 +51,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6" data-testid="text-footer-tagline">
-              Smart technology solutions for modern businesses. Strategic, reliable,
-              and future-ready.
+              Premier custom software development company delivering AI solutions and deep tech engineering globally.
             </p>
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (
@@ -62,6 +61,7 @@ export function Footer() {
                   className="w-10 h-10 bg-white/10 hover:bg-gradient-to-br hover:from-[#FF6632] hover:to-[#FBAC41] rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all"
                   aria-label={social.label}
                   data-testid={`link-social-${social.label.toLowerCase()}`}
+                  target="_blank"
                 >
                   <social.icon className="w-4 h-4" />
                 </a>
@@ -129,12 +129,12 @@ export function Footer() {
             &copy; {new Date().getFullYear()} QuantumCusp. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <button className="text-sm text-gray-400 hover:text-[#FF6632] transition-colors" data-testid="link-privacy">
+            <Link href="/privacy-policy" className="text-sm text-gray-400 hover:text-[#FF6632] transition-colors" data-testid="link-privacy">
               Privacy Policy
-            </button>
-            <button className="text-sm text-gray-400 hover:text-[#FF6632] transition-colors" data-testid="link-terms">
+            </Link>
+            <Link href="/terms-of-service" className="text-sm text-gray-400 hover:text-[#FF6632] transition-colors" data-testid="link-terms">
               Terms of Service
-            </button>
+            </Link>
           </div>
         </div>
       </div>

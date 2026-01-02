@@ -15,40 +15,27 @@ export default function Home() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "SoftwareApplication",
+        "name": "QuantumCusp",
+        "alternateName": "Quantum Cusp",
+        "url": "https://quantumcusp.co",
+        "logo": "https://quantumcusp.co/LogoDark.svg",
+        "description": "QuantumCusp delivers scalable software development, AI solutions, WhatsApp automation for SMBs worldwide.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
         "@type": "Organization",
         "name": "QuantumCusp",
         "url": "https://quantumcusp.co",
-        "logo": "https://quantumcusp.co/LogoDark.svg",
-        "description": "Custom software development company in India specializing in business automation, inventory systems, and AI-enabled tools for SMBs",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "IN"
-        },
         "sameAs": [
           "https://www.linkedin.com/company/quantumcusp"
         ]
-      },
-      {
-        "@type": "WebSite",
-        "name": "QuantumCusp",
-        "url": "https://quantumcusp.co",
-        "description": "Custom software development India for SMBs - Inventory systems, business automation, WhatsApp CRM",
-        "publisher": {
-          "@type": "Organization",
-          "name": "QuantumCusp"
-        }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "QuantumCusp Custom Software Solutions",
-        "description": "Custom software development India for SMBs. Inventory systems, business automation, WhatsApp CRM.",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "provider": {
-          "@type": "Organization",
-          "name": "QuantumCusp",
-          "url": "https://quantumcusp.co"
-        }
       }
     ]
   };
@@ -57,42 +44,40 @@ export default function Home() {
     <div className="min-h-screen">
       <Helmet>
         {/* Primary Meta Tags */}
-        <title>Custom Software Development | QuantumCusp - SMB Solutions</title>
+        <title>QuantumCusp: Custom Software Development & AI Solutions</title>
         <meta 
           name="description" 
-          content="QuantumCusp builds Custom Software Development, Inventory Management Software, WhatsApp Business Automation, Order Tracking Systems, Admin Portals & Websites, Lead Management Tools, AI Automation system for SMBs. quantumcusp.co" 
+          content="QuantumCusp delivers scalable software development, AI solutions, WhatsApp automation for SMBs worldwide. Custom engineering, generative intelligence, product delivery." 
         />
-        <link rel="canonical" href="https://quantumcusp.co/" />
+        <link rel="canonical" href="https://quantumcusp.co" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://quantumcusp.co/" />
-        <meta property="og:title" content="Custom Software Development | QuantumCusp - SMB Solutions" />
+        <meta property="og:url" content="https://quantumcusp.co" />
+        <meta property="og:title" content="QuantumCusp: Custom Software Development & AI Solutions" />
         <meta 
           property="og:description" 
-          content="QuantumCusp delivers custom software development in India for SMBs. Build inventory management software, WhatsApp automation, order tracking systems." 
+          content="QuantumCusp delivers scalable software development, AI solutions, WhatsApp automation for SMBs worldwide. Custom engineering, generative intelligence, product delivery." 
         />
         <meta property="og:image" content="https://quantumcusp.co/LogoDark.svg" />
         <meta property="og:site_name" content="QuantumCusp" />
-        <meta property="og:locale" content="en_IN" />
+        <meta property="og:locale" content="en_US" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://quantumcusp.co/" />
-        <meta name="twitter:title" content="Custom Software Development | QuantumCusp - SMB Solutions" />
+        <meta name="twitter:url" content="https://quantumcusp.co" />
+        <meta name="twitter:title" content="QuantumCusp: Custom Software Development & AI Solutions" />
         <meta 
           name="twitter:description" 
-          content="QuantumCusp delivers custom software development in India for SMBs. Build inventory management software, WhatsApp automation, order tracking systems." 
+          content="QuantumCusp delivers scalable software development, AI solutions, WhatsApp automation for SMBs worldwide. Custom engineering, generative intelligence, product delivery." 
         />
         <meta name="twitter:image" content="https://quantumcusp.co/LogoDark.svg" />
         
         {/* Additional SEO Meta Tags */}
-        <meta name="keywords" content="custom software development India, inventory management software India, business automation, WhatsApp business automation for SMB, order tracking system India, admin portal development, coaching institute software India" />
+        <meta name="keywords" content="QuantumCusp, quantum cusp, software development, custom software, AI solutions, WhatsApp automation, scalable SaaS, digital engineering, business solutions" />
         <meta name="author" content="QuantumCusp" />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
-        <meta name="geo.region" content="IN-GJ" />
-        <meta name="geo.placename" content="Gujarat, India" />
         
         {/* Structured Data */}
         <script type="application/ld+json">

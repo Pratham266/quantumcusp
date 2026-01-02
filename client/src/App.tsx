@@ -14,6 +14,9 @@ import Team from "@/pages/Team";
 import Estimator from "@/pages/Estimator";
 import Testimonials from "@/pages/Testimonials";
 import AboutUs from "@/pages/AboutUs";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import TermsOfService from "@/pages/TermsOfService";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 function Router() {
   return (
@@ -28,6 +31,8 @@ function Router() {
         <Route path="/testimonials/:slug" component={CaseStudyDetail} />
         <Route path="/team" component={Team} />
         <Route path="/about-us" component={AboutUs} />
+        <Route path="/privacy-policy" component={PrivacyPolicy} />
+        <Route path="/terms-of-service" component={TermsOfService} />
         <Route path="/estimator" component={Estimator} />
         <Route component={NotFound} />
       </Switch>
@@ -41,6 +46,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <Toaster />
+          <WhatsAppButton />
           <Router />
         </TooltipProvider>
       </QueryClientProvider>

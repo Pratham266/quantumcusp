@@ -12,12 +12,12 @@ const faqs = [
     answer: "Custom software development refers to creating tailored software solutions specifically designed for your business needs. Unlike off-the-shelf software, custom software is built from scratch to match your unique workflows, processes, and requirements. At QuantumCusp, we specialize in building inventory management systems, AI automation, WhatsApp business automation, and SaaS products for growing SMBs globally.",
   },
   {
-    question: "How much does inventory management software cost in India?",
-    answer: "The cost of inventory management software in India varies based on features, complexity, and scale. Basic inventory systems start from ₹50,000, while advanced solutions with multi-location support, barcode scanning, and real-time tracking range from ₹1-5 lakhs. We offer affordable custom inventory management software tailored to Indian SMBs with flexible pricing and payment plans.",
+    question: "How much does custom software cost?",
+    answer: "The cost of custom software varies based on features, complexity, and scale. Basic automation tools start from affordable rates, while advanced solutions with multi-tenant architecture and AI integration require more investment. We offer flexible pricing models tailored to SMBs worldwide.",
   },
   {
-    question: "Can you build WhatsApp business automation for small businesses?",
-    answer: "Yes! We specialize in WhatsApp business automation for SMBs in and across India. Our solutions include automated order confirmations, payment reminders, customer support chatbots, broadcast messaging, and WhatsApp CRM integration. This helps small businesses streamline customer communication, reduce manual work, and boost sales through automated WhatsApp messaging.",
+    question: "Can you build WhatsApp business automation for SMBs?",
+    answer: "Yes! We specialize in WhatsApp business automation for SMBs globally. Our solutions include automated order confirmations, payment reminders, customer support chatbots, broadcast messaging, and WhatsApp CRM integration. This helps small businesses streamline customer communication, reduce manual work, and boost sales through automated WhatsApp messaging.",
   },
   {
     question: "Can you build AI automation and intelligent workflows?",
@@ -54,7 +54,7 @@ export function FAQ() {
   return (
     <section id="faq" className="py-20 lg:py-28 bg-muted/30">
       {/* FAQ Schema Markup */}
-      <script type="application/ld+json">
+       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </script>
 

@@ -84,11 +84,11 @@ export function Hero() {
 
           <h1 className="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
             QuantumCusp{" "}
-            <span className="text-primary">Custom Software Development</span>
+            <span className="text-primary">Software Development</span>
           </h1>
 
           <p className="hero-description text-lg sm:text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl">
-            Build inventory management systems, AI-powered automation, and scalable SaaS products for growing SMBs. Transform your business with custom software development, WhatsApp automation, and intelligent workflows.
+            Build scalable SaaS products, AI-powered automation, and custom software solutions for growing businesses. Transform your operations with generative intelligence, digital engineering, and WhatsApp automation.
           </p>
 
           <div className="hero-buttons flex flex-wrap gap-4">
@@ -118,7 +118,7 @@ export function Hero() {
           <div className="hero-image-float">
             <img 
               src="/images/HeroWelcome.png" 
-              alt="Custom software development India for SMBs - QuantumCusp" 
+              alt="Custom software development and AI solutions - QuantumCusp" 
               className="w-full h-auto object-contain drop-shadow-2xl"
             />
           </div>
