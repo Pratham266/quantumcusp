@@ -121,7 +121,7 @@ export const testimonials: CaseStudy[] = [
     testimonial: {
       quote:
         "We’ve been in the sodium silicate business for more than two decades, and most of our processes grew along with us. QuantumCusp helped us put structure around that growth. The new website and admin system make it much easier for our team to see where inventory stands, what has been committed and what is ready to ship. It feels like our operations have finally caught up with the scale of our business.",
-      author: "Deep J",
+      author: "Manasi D",
       role: "CEO, Quimico Exim",
     },
   },
