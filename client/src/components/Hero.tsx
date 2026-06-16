@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import "./Hero.css";
 
 const taglines = [
-  "Real Business Growth.",
-  "Smarter Automation.",
-  "Scalable Solutions.",
-  "Future-Ready Innovation.",
-  "AI-Powered Success.",
+  "Shipped on time, every time.",
+  "Engineered to scale.",
+  "Powered by AI agents.",
+  "Built for ambitious teams.",
+  "From idea to production.",
 ];
 
 export function Hero() {
@@ -55,41 +55,50 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-slate-950"
+      className="relative min-h-[100vh] flex items-center justify-center overflow-hidden"
+      style={{ background: "#0f0f0f" }}
     >
       {/* Grid pattern overlay */}
-      <div 
-        className="absolute inset-0 opacity-20"
+      <div
+        className="absolute inset-0"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+            linear-gradient(rgba(255,102,50,0.15) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,102,50,0.15) 1px, transparent 1px)
           `,
-          backgroundSize: '50px 50px'
+          backgroundSize: '60px 60px'
         }}
       />
-      
-      {/* Floating orbs */}
-      <div className="floating-orb-1 absolute top-20 left-20 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl" />
-      <div className="floating-orb-2 absolute bottom-20 right-20 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl" />
-      <div className="floating-orb-3 absolute top-1/2 left-1/2 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl" />
+
+      {/* Soft ambient glows */}
+      <div className="floating-orb-1 absolute top-20 left-20 w-80 h-80 rounded-full blur-3xl" style={{ background: 'rgba(255,102,50,0.07)' }} />
+      <div className="floating-orb-2 absolute bottom-10 right-20 w-96 h-96 rounded-full blur-3xl" style={{ background: 'rgba(251,172,65,0.05)' }} />
+      <div className="floating-orb-3 absolute top-1/2 left-1/2 w-72 h-72 rounded-full blur-3xl" style={{ background: 'rgba(255,102,50,0.04)' }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-32 w-full grid lg:grid-cols-2 gap-12 items-center">
         <div className="hero-content max-w-3xl">
           <div className="hero-badge">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary-foreground text-sm font-medium mb-6 backdrop-blur-sm border border-primary/30">
-              Software Development Partner
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/20 text-white text-sm font-medium mb-6 backdrop-blur-sm border border-primary/30">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              Your Engineering Partner for Digital Products
             </span>
           </div>
 
-          <h1 className="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
-            QuantumCusp{" "}
-            <span className="text-primary">Software Development</span>
+          <h1 className="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-4">
+            We Build Software That{" "}
+            <span className="text-primary">Moves Your Business</span>{" "}
+            Forward
           </h1>
 
-          <p className="hero-description text-lg sm:text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl">
-            Build scalable SaaS products, AI-powered automation, and custom software solutions for growing businesses. Transform your operations with generative intelligence, digital engineering, and WhatsApp automation.
-          </p>
+          <div className="hero-description mb-8">
+            <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl mb-3">
+              Custom web applications, SaaS platforms, AI agents, and workflow automation — designed, built, and shipped by a team that treats your product like their own.
+            </p>
+            <p className="text-primary font-semibold text-lg min-h-[1.75rem]">
+              {displayedText}
+              <span className="animate-pulse">|</span>
+            </p>
+          </div>
 
           <div className="hero-buttons flex flex-wrap gap-4">
             <Button
@@ -98,7 +107,7 @@ export function Hero() {
               className="bg-primary border-primary-border"
               data-testid="button-hero-get-started"
             >
-             Get Free Consultation
+              Start a Project
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
             <Button
@@ -109,16 +118,16 @@ export function Hero() {
               data-testid="button-hero-learn-more"
             >
               <Play className="w-4 h-4 mr-2" />
-              View Our Services
+              Explore Services
             </Button>
           </div>
         </div>
-        
+
         <div className="hero-image relative lg:block">
           <div className="hero-image-float">
-            <img 
-              src="/images/HeroWelcome.png" 
-              alt="Custom software development and AI solutions - QuantumCusp" 
+            <img
+              src="/images/HeroWelcome.png"
+              alt="Custom software development and AI solutions - QuantumCusp India"
               className="w-full h-auto object-contain drop-shadow-2xl"
             />
           </div>

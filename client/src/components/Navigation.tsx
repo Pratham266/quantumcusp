@@ -93,6 +93,8 @@ export function Navigation() {
     }
   };
 
+  const [dropdownOpen, setDropdownOpen] = useState<Record<string, boolean>>({});
+
   const navBarFontColor =
     !isScrolled && ["/", "/home"].includes(location) ? "text-white" : "";
 
@@ -125,7 +127,9 @@ export function Navigation() {
 
         <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link: any) => {
-            const [open, setOpen] = useState(false);
+            const open = !!dropdownOpen[link.label];
+            const setOpen = (val: boolean) =>
+              setDropdownOpen((prev) => ({ ...prev, [link.label]: val }));
             return link.isDropdown ? (
               <div
                 key={link.label}

@@ -19,20 +19,21 @@ export default function AboutUs() {
         "description": "Founder who believes that execution matters as much as vision, with a background in building real systems for real businesses"
       },
       "foundingDate": "2023",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "IN"
-      }
+      "address": { "@type": "PostalAddress", "addressCountry": "IN" },
+      "sameAs": [
+        "https://www.linkedin.com/company/112546920",
+        "https://www.instagram.com/quantumcusp"
+      ]
     }
   };
 
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>About Us - Building the Future Together | QuantumCusp</title>
-        <meta 
-          name="description" 
-          content="Learn about QuantumCusp, founded in 2023 by Ayushi Rao. We combine strategic thinking with technical excellence to deliver custom software solutions that create real, measurable value for businesses." 
+        <title>About QuantumCusp — Custom Software Development Company in India | Founded 2023</title>
+        <meta
+          name="description"
+          content="QuantumCusp is a custom software development company founded in 2023. We build web applications, AI agents, workflow automation, and SaaS products for startups and growing businesses."
         />
         <link rel="canonical" href="https://quantumcusp.co/about-us" />
         

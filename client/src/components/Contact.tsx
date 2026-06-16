@@ -3,8 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Mail, ArrowRight, Loader2, CheckCircle } from "lucide-react";
+import { Mail, Loader2, CheckCircle } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -91,7 +90,7 @@ export function Contact() {
             </p>
 
             <a 
-              href="mailto:hello@quantumcusp.co"
+              href="mailto:support@quantumcusp.co"
               className="bg-white rounded-[20px] p-3 pr-8 inline-flex items-center gap-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-orange-100 max-w-md w-full sm:w-auto hover:shadow-lg transition-all cursor-pointer group"
             >
               <div className="w-14 h-14 rounded-[18px] bg-gradient-to-b from-[#FF853C] to-[#FFB95D] flex items-center justify-center shrink-0 shadow-orange-200 shadow-inner ring-1 ring-white/20">
@@ -103,7 +102,7 @@ export function Contact() {
                   className="text-[#FF7A30] text-lg font-medium leading-tight group-hover:text-[#E66010] transition-colors"
                   data-testid="link-email"
                 >
-                  hello@quantumcusp.co  
+                  support@quantumcusp.co
                 </span>
               </div>
             </a>
@@ -211,14 +210,11 @@ export function Contact() {
                         ) : (
                           <span className="flex items-center text-white">
                             Send Message
-                            <IoIosSend  className="ml-2 relative" size={28} style={{
-                              height: "28px",
-                              width: "28px",
-                            }}/>
+                            <IoIosSend className="ml-2 relative" size={28} style={{ height: "28px", width: "28px" }} />
                           </span>
                         )}
                       </Button>
-                      
+
                       <p className="text-center text-sm text-gray-400 mt-6">
                         We respect your privacy. Your information will never be shared.
                       </p>

@@ -8,28 +8,32 @@ import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 const faqs = [
   {
-    question: "What is custom software development?",
-    answer: "Custom software development refers to creating tailored software solutions specifically designed for your business needs. Unlike off-the-shelf software, custom software is built from scratch to match your unique workflows, processes, and requirements. At QuantumCusp, we specialize in building inventory management systems, AI automation, WhatsApp business automation, and SaaS products for growing SMBs globally.",
+    question: "What kinds of software does QuantumCusp build?",
+    answer: "We build custom web applications, SaaS platforms, AI agents and intelligent systems, workflow automation tools, and UI/UX-led product experiences. Our work spans greenfield products for founders, internal tools for growing teams, and AI-native features for existing products. If it involves writing code and shipping software, we can help.",
   },
   {
-    question: "How much does custom software cost?",
-    answer: "The cost of custom software varies based on features, complexity, and scale. Basic automation tools start from affordable rates, while advanced solutions with multi-tenant architecture and AI integration require more investment. We offer flexible pricing models tailored to SMBs worldwide.",
+    question: "How is QuantumCusp different from a typical dev agency?",
+    answer: "Most agencies take a spec and build it. We push back when something won't work, suggest a better technical approach when one exists, and stay engaged until the software is doing what it needs to do for your business. Every project starts with an architecture review and a clear milestone plan — before any code is written. You get weekly demos, documented code, and a team that communicates like a colleague, not a contractor.",
   },
   {
-    question: "Can you build WhatsApp business automation for SMBs?",
-    answer: "Yes! We specialize in WhatsApp business automation for SMBs globally. Our solutions include automated order confirmations, payment reminders, customer support chatbots, broadcast messaging, and WhatsApp CRM integration. This helps small businesses streamline customer communication, reduce manual work, and boost sales through automated WhatsApp messaging.",
+    question: "What does working with AI agents actually mean?",
+    answer: "AI agents are software systems that can reason, plan, and take multi-step actions autonomously — connecting to your tools, reading data, making decisions, and executing tasks without constant human input. We build custom agents for use cases like document processing, intelligent routing, automated research, and workflow orchestration — integrated directly into your product or internal systems using frameworks like LangChain, OpenAI, and Anthropic's API.",
   },
   {
-    question: "Can you build AI automation and intelligent workflows?",
-    answer: "Yes! We specialize in AI-powered automation for SMBs. Our solutions include WhatsApp business automation, intelligent chatbots, automated document processing, predictive analytics, and custom AI integrations. We help businesses automate repetitive tasks, gain data-driven insights, and implement smart workflows that save time and reduce operational costs.",
+    question: "How long does a typical project take?",
+    answer: "A focused MVP or internal tool typically ships in 4–8 weeks. A full SaaS product or AI-integrated platform is 8–16 weeks depending on scope. We work in short sprints with weekly demos, so you see real progress throughout — not just at the end. We'll give you a timeline estimate in our first conversation, and we stick to it.",
   },
   {
-    question: "What is the timeline for custom software development?",
-    answer: "Project timelines depend on complexity and scope. Simple automation tools or MVPs take 4-8 weeks, while comprehensive inventory systems or SaaS products take 8-16 weeks. We follow an agile development process with regular updates and demos. Contact us for a free consultation to get an accurate timeline for your custom software development project.",
+    question: "Can you work with our existing engineering team?",
+    answer: "Yes — this is one of the most common ways we engage. We integrate as an extension of your existing team, matching your stack, your code style, and your shipping cadence. We can take ownership of a specific product area, work on a new feature, or help you move faster on a project that's been stuck. We're used to jumping into existing codebases and contributing from day one.",
   },
   {
-    question: "Do you build SaaS products and MVPs for startups?",
-    answer: "Absolutely! We specialize in SaaS product development for startups and product companies. Our services include MVP development, cloud-native architecture, multi-tenant systems, subscription management, API development, and DevOps setup. We help startups launch scalable products quickly with modern tech stacks and best practices for fast-growing businesses.",
+    question: "How do you handle pricing?",
+    answer: "We work on both fixed-scope projects and ongoing retainers. For well-defined projects, we give a fixed quote after a scoping call. For longer-term product development or team extension, we offer monthly retainers with a defined team and delivery structure. We don't do vague T&M billing — every engagement has clear deliverables and expectations. Book a free consultation to get a no-obligation estimate for your project.",
+  },
+  {
+    question: "Do you build SaaS products from scratch?",
+    answer: "Yes — end to end. That means product architecture, UI/UX design, frontend, backend, API development, database design, cloud infrastructure, and DevOps. We handle multi-tenancy, subscription and billing integration, authentication, and everything else that comes with launching a production SaaS. We've helped founders go from idea to live product, and we know where the hidden complexity lives before it surprises you.",
   },
 ];
 
@@ -67,10 +71,10 @@ export function FAQ() {
             FAQ
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-            Frequently Asked Questions
+            Questions We Get Asked
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            Common questions about custom software development, pricing, and our services.
+            Straight answers about how we work, what we build, and what it's like to partner with us.
           </p>
         </div>
 

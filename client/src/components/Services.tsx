@@ -1,50 +1,44 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Package, MessageSquare, LayoutDashboard, Cloud, TrendingUp, Shield } from "lucide-react";
+import { Code2, Globe, Bot, GitMerge, Cloud, Palette } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import "./Services.css";
 
 const services = [
   {
-    icon: Package,
-    title: "Scalable AI Solutions",
+    icon: Code2,
+    title: "Custom Software Development",
     description:
-      "Transform your business with Generative Intelligence and custom AI solutions. Automate workflows, enhance decision-making, and build intelligent systems that scale with your growth. Expert software development for the future.",
-    keywords: "AI solutions, generative intelligence, custom software, digital engineering",
+      "Purpose-built software engineered around your exact business logic — not a template stretched to fit. From complex backends and APIs to internal tools and admin systems, we build it right the first time.",
   },
   {
-    icon: MessageSquare,
-    title: "WhatsApp Automation for SMBs",
+    icon: Globe,
+    title: "Web Development",
     description:
-      "Streamline customer communication with powerful WhatsApp Business automation. Automated order updates, intelligent chatbots, and seamless CRM integration. Drive sales and improve engagement.",
-    keywords: "WhatsApp automation, business automation, CRM integration, digital solutions",
+      "Fast, modern web applications built with React, Next.js, and best-in-class frontend technologies. Pixel-perfect UIs, seamless performance, and clean architecture that your team can own and extend.",
   },
   {
-    icon: LayoutDashboard,
-    title: "Custom Engineering Team",
+    icon: Bot,
+    title: "AI Agents & Intelligent Systems",
     description:
-      "Dedicated custom engineering teams for your specialized projects. From complex admin portals to bespoke business applications, we deliver robust, scalable software tailored to your specific needs.",
-    keywords: "custom engineering, software development team, bespoke applications, scalable SaaS",
+      "Custom AI agents that reason, plan, and act across your tools and data. From document intelligence and autonomous workflows to LLM-powered features embedded directly into your product.",
+  },
+  {
+    icon: GitMerge,
+    title: "Workflow Automation",
+    description:
+      "End-to-end automation that eliminates manual handoffs, reduces errors, and gives your team their time back. We map your processes, identify the bottlenecks, and build automation that actually holds.",
   },
   {
     icon: Cloud,
-    title: "Scalable SaaS Development",
+    title: "SaaS Product Development",
     description:
-      "Build market-ready SaaS products with our end-to-end software development services. Cloud-native architecture, secure infrastructure, and rapid deployment for your digital product ideas.",
-    keywords: "scalable SaaS, cloud solutions, product development, software engineering",
+      "From MVP to multi-tenant platform — we architect, build, and launch SaaS products designed to scale. Cloud-native infrastructure, subscription systems, API design, and DevOps all under one roof.",
   },
   {
-    icon: TrendingUp,
-    title: "Business Process Automation",
+    icon: Palette,
+    title: "UI/UX Design & Prototyping",
     description:
-      "Optimize your operations with custom automation tools. Reduce manual effort and increase efficiency with tailored software solutions designed for your unique business processes.",
-    keywords: "business solutions, process automation, operational efficiency, custom tools",
-  },
-  {
-    icon: Shield,
-    title: "Enterprise-Grade Security",
-    description:
-      "Secure software solutions that protect your data and business. Compliance-ready architecture, regular security audits, and robust data protection for peace of mind.",
-    keywords: "secure software, enterprise security, data protection, digital safety",
+      "Design that converts. We prototype your product before a single line of code is written — so you validate the experience, not just the idea. Clean systems thinking from day one.",
   },
 ];
 
@@ -60,14 +54,14 @@ export function Services() {
           className={`services-header ${headerVisible ? "visible" : ""} text-center mb-16`}
         >
           <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
-            Our Services
+            What We Do
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-            Global Software Solutions{" "}
-            <span className="text-primary">for Digital Business</span>
+            Everything You Need to{" "}
+            <span className="text-primary">Build & Ship</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            From custom software development to AI automation, we deliver scalable digital engineering solutions for SMBs and enterprises worldwide.
+            Full-spectrum software engineering — from the first wireframe to production deployment. We cover every layer so you don't have to juggle multiple vendors.
           </p>
         </div>
 

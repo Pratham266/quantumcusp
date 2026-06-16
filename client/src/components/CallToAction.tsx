@@ -18,10 +18,11 @@ export const CallToAction = () => {
       {/* Content */}
       <div className="cta-content">
         <h2 className="cta-heading">
-         Scale your business with our <span className="text-primary">custom software development</span> and AI solutions.
+          Have a product idea or an engineering problem?{" "}
+          <span className="text-primary">Let's solve it together.</span>
         </h2>
         <p className="cta-subheading">
-           Ready to transform your operations with scalable SaaS and WhatsApp automation? Start your project today.
+          Tell us what you're building. We'll tell you how we'd approach it — no commitment, no sales pitch.
         </p>
         <Button
               size="lg"

@@ -6,51 +6,49 @@ import "./Solutions.css";
 
 const solutions = [
   {
-    icon: Package,
-    audience: "Retail & E-commerce SMBs",
-    title: "Inventory & Order Management Systems",
+    icon: Sparkles,
+    audience: "Startups & Founders",
+    title: "Go From Idea to Launched Product",
     description:
-      "Complete inventory and order management solutions for growing businesses. Real-time stock tracking, automated reordering, multi-channel order management, and seamless integration with your existing systems.",
+      "You have a vision. We have the team to make it real. Whether it's your first MVP or a full SaaS platform, we move fast without cutting corners — so you can validate, iterate, and grow.",
     outcomes: [
-      "Real-time inventory tracking across locations",
-      "Automated low-stock alerts and reordering",
-      "Multi-channel order synchronization",
-      "Supplier and vendor management",
-      "Sales analytics and reporting dashboards",
+      "MVP in weeks, not months",
+      "Scalable architecture from day one",
+      "UI/UX design included",
+      "API-first, integration-ready builds",
+      "Ongoing dev support post-launch",
+      "Clear milestones, no surprises",
     ],
-    keywords: "inventory management software, order tracking system, warehouse management",
   },
   {
-    icon: Sparkles,
-    audience: "Growing SMBs",
-    title: "AI Automation & Business Intelligence",
+    icon: Package,
+    audience: "Growing Businesses",
+    title: "Replace Spreadsheets With Real Systems",
     description:
-      "Transform your business with AI-powered automation and intelligent workflows. Automate repetitive tasks, gain data-driven insights, implement WhatsApp business automation, and streamline operations with smart AI tools.",
+      "Your business has grown past what manual processes and off-the-shelf tools can handle. We build custom software that fits your actual workflows — not the other way around.",
     outcomes: [
-      "WhatsApp business automation and chatbots",
-      "Automated customer communication workflows",
-      "AI-powered data analytics and insights",
-      "Intelligent document processing",
-      "Predictive analytics for business decisions",
-      "Custom AI integrations for your workflows",
+      "Custom web applications & portals",
+      "Workflow automation & process digitisation",
+      "AI agents embedded into your operations",
+      "Third-party integrations & data pipelines",
+      "Internal tools your team will actually use",
+      "Ongoing maintenance & feature delivery",
     ],
-    keywords: "AI automation, WhatsApp business automation, business intelligence, workflow automation",
   },
   {
     icon: Rocket,
-    audience: "Product Companies & Startups",
-    title: "SaaS Product Development",
+    audience: "Product & Tech Teams",
+    title: "Extend Your Engineering Capacity",
     description:
-      "Build scalable SaaS products from concept to launch. Cloud-native architecture, multi-tenant systems, subscription management, and modern tech stack for fast-growing product companies and startups.",
+      "When your in-house team needs more hands or specialised skills, we integrate as a natural extension — matching your stack, your standards, and your shipping velocity.",
     outcomes: [
-      "MVP development and rapid prototyping",
-      "Scalable cloud-native architecture",
-      "Multi-tenant SaaS infrastructure",
-      "Subscription and billing management",
-      "API development and integrations",
-      "DevOps and continuous deployment",
+      "Dedicated developers, designers & architects",
+      "Full-stack & AI engineering expertise",
+      "Seamless integration with your existing team",
+      "Code reviews, pair programming & documentation",
+      "DevOps, CI/CD & cloud infrastructure",
+      "Flexible engagement — sprint by sprint or long-term",
     ],
-    keywords: "SaaS development, product development, cloud software, startup MVP",
   },
 ];
 
@@ -73,14 +71,14 @@ export function Solutions() {
           className={`solutions-header ${headerVisible ? "visible" : ""} text-center mb-16`}
         >
           <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
-            Industry Solutions
+            Who We Work With
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-            Software Solutions for{" "}
-            <span className="text-primary">SMBs & Product Companies</span>
+            Built for Where{" "}
+            <span className="text-primary">You Are Right Now</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            Custom software development for growing businesses. From inventory management and AI automation to SaaS products and business process automation for global SMBs.
+            Whether you're launching your first product, scaling past manual processes, or extending an existing team — we have a model that fits.
           </p>
         </div>
 

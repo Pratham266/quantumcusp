@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Getting Started</h2>
       <p>The key to successful AI adoption is starting small, measuring results, and scaling what works. Begin with a pilot project in a non-critical area, validate the approach, then expand systematically.</p>
     `,
-    author: "Priya Sharma",
+    author: "Ayushi Rao",
     category: "Technology",
     readTime: "5 min read",
     publishedAt: "2024-12-10",
@@ -43,7 +43,7 @@ export const blogPosts: BlogPost[] = [
       <h2>API-First Design</h2>
       <p>Design your APIs before building your UI. This forces you to think about data models and enables parallel development of frontend and backend components.</p>
     `,
-    author: "Arjun Patel",
+    author: "Vikram Singh",
     category: "Engineering",
     readTime: "7 min read",
     publishedAt: "2024-12-05",
@@ -66,7 +66,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Technology as an Enabler</h2>
       <p>Once you have clarity on strategy and current state, technology decisions become much clearer. The right technology is the one that best enables your specific business objectives.</p>
     `,
-    author: "Neha Gupta",
+    author: "Sneha Desai",
     category: "Strategy",
     readTime: "6 min read",
     publishedAt: "2024-11-28",
@@ -86,7 +86,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Technical Debt Management</h2>
       <p>Some technical debt is acceptable in an MVP, but make it visible and trackable. Know what shortcuts you're taking and have a plan to address them.</p>
     `,
-    author: "Rohan Mehta",
+    author: "Aditya Kumar",
     category: "Startups",
     readTime: "4 min read",
     publishedAt: "2024-11-20",
@@ -192,15 +192,15 @@ export const teamMembers: TeamMember[] = [
     id: "1",
     name: "Ayushi Rao",
     role: "CEO & Founder",
-    bio: "Alexandra founded QuantumCusp with a vision to make enterprise-grade technology accessible to businesses of all sizes. With 15+ years of experience in technology leadership, she has led digital transformation initiatives for Fortune 500 companies and high-growth startups alike.",
+    bio: "Ayushi founded QuantumCusp in 2023 with a vision to make enterprise-grade technology accessible to growing businesses of all sizes. With a background in building real systems for manufacturers, exporters, and SMBs, she works closely with every client from first discussion to final delivery — ensuring technology always serves the people who use it.",
     expertise: ["Digital Strategy", "Business Development", "Enterprise Architecture"],
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/company/112546920",
   },
   {
     id: "2",
     name: "Vikram Singh",
     role: "CTO",
-    bio: "James leads our technology vision and engineering teams. Previously a principal engineer at leading tech companies, he brings deep expertise in cloud architecture, AI/ML systems, and building scalable platforms that serve millions of users.",
+    bio: "Vikram leads our technology vision and engineering teams at QuantumCusp. He brings deep expertise in cloud architecture, AI/ML systems, and building scalable platforms — translating complex technical challenges into robust, maintainable solutions for our clients.",
     expertise: ["Cloud Architecture", "AI/ML", "System Design", "Platform Engineering"],
     linkedin: "#",
   },
@@ -208,7 +208,7 @@ export const teamMembers: TeamMember[] = [
     id: "3",
     name: "Kavya Reddy",
     role: "VP of Engineering",
-    bio: "Maria oversees our engineering teams and delivery processes. She has built and scaled engineering organizations from startup to enterprise, with a focus on creating high-performing teams that deliver exceptional software.",
+    bio: "Kavya oversees our engineering teams and delivery processes. She has built and scaled engineering organisations from startup to enterprise, with a focus on creating high-performing teams that ship exceptional software on time and on budget.",
     expertise: ["Engineering Leadership", "Agile/DevOps", "Team Building"],
     linkedin: "#",
   },
@@ -216,7 +216,7 @@ export const teamMembers: TeamMember[] = [
     id: "4",
     name: "Aditya Kumar",
     role: "Head of AI & Data",
-    bio: "David leads our AI and data science initiatives. With a PhD in Machine Learning and experience at top AI research labs, he ensures our AI solutions deliver real business value, not just technological novelty.",
+    bio: "Aditya leads our AI and data science initiatives. He ensures our AI solutions — from WhatsApp automation to predictive analytics — deliver measurable business value, not just technological novelty.",
     expertise: ["Machine Learning", "Data Science", "AI Strategy", "Analytics"],
     linkedin: "#",
   },
@@ -224,7 +224,7 @@ export const teamMembers: TeamMember[] = [
     id: "5",
     name: "Sneha Desai",
     role: "Director of Product",
-    bio: "Sarah drives product strategy and ensures we're building solutions that truly solve customer problems. Her background in design thinking and product management helps translate complex requirements into elegant, user-friendly products.",
+    bio: "Sneha drives product strategy and ensures we build solutions that genuinely solve customer problems. Her background in design thinking and product management helps translate complex business requirements into elegant, user-friendly products.",
     expertise: ["Product Strategy", "UX Design", "Customer Research"],
     linkedin: "#",
   },
@@ -232,7 +232,7 @@ export const teamMembers: TeamMember[] = [
     id: "6",
     name: "Rahul Verma",
     role: "Director of Client Success",
-    bio: "Thomas ensures our clients achieve their business objectives through our technology solutions. He brings a consultative approach to client relationships, focusing on long-term partnerships and measurable outcomes.",
+    bio: "Rahul ensures our clients achieve their business objectives through our technology solutions. He brings a consultative approach to every client relationship, focusing on long-term partnerships and outcomes that move the needle.",
     expertise: ["Client Relations", "Project Delivery", "Business Consulting"],
     linkedin: "#",
   },

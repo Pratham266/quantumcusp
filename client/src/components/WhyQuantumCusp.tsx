@@ -5,32 +5,32 @@ import "./WhyQuantumCusp.css";
 const differentiators = [
   {
     icon: Target,
-    title: "Strategic Thinking",
-    description: "Custom software aligned with your business goals",
+    title: "Outcome-First Thinking",
+    description: "We design for business results, not just technical delivery",
   },
   {
     icon: Layers,
-    title: "Scalable Architecture",
-    description: "SaaS solutions built to grow with your business",
+    title: "Architecture Before Code",
+    description: "Every project starts with a clear technical blueprint you approve",
   },
   {
     icon: Users,
-    title: "Long-term Partnerships",
-    description: "Committed engineering teams invested in your success",
+    title: "A Team, Not a Vendor",
+    description: "We integrate with your workflow and stay accountable end to end",
   },
   {
     icon: Clock,
-    title: "Generative AI Integration",
-    description: "AI solutions that deliver real business value",
+    title: "AI-Native Engineering",
+    description: "AI agents and automation built in from the start, not bolted on later",
   },
 ];
 
 const benefits = [
-  "Business-first approach to every solution",
-  "Transparent communication and processes",
-  "Proven track record with modern technologies",
-  "Dedicated support and ongoing optimization",
-  "Flexible engagement models",
+  "Clear roadmap and milestones before any code is written",
+  "Weekly demos so you always know what's shipping",
+  "Full-stack expertise — frontend, backend, AI, DevOps",
+  "Clean, documented code your team can take ownership of",
+  "Flexible engagements — fixed scope or ongoing delivery",
 ];
 
 export function WhyQuantumCusp() {
@@ -46,13 +46,14 @@ export function WhyQuantumCusp() {
             className={`why-content-left ${leftVisible ? "visible" : ""}`}
           >
             <span className="text-primary text-sm font-semibold uppercase tracking-wider mb-4 block">
-              Why QuantumCusp
+              Why Work With Us
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-              Strategic <span className="text-primary">Custom Software</span>
+              We're Engineers Who{" "}
+              <span className="text-primary">Think Like Founders</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              We're not just developers — we're strategic partners building scalable software and AI solutions committed to your long-term success. Our approach combines deep engineering expertise with business intelligence.
+              Most dev shops take your spec and build it. We push back when something won't work, suggest a better path when one exists, and stay engaged until the product is actually doing what it needs to do for your business.
             </p>
             <ul className="space-y-4">
               {benefits.map((benefit, index) => (

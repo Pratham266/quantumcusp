@@ -1,5 +1,5 @@
 import { Link,useLocation } from "wouter";
-import { SiLinkedin,SiInstagram, SiFacebook } from "react-icons/si";
+import { SiLinkedin, SiInstagram, SiFacebook } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 
 
@@ -15,7 +15,7 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  // { icon: SiLinkedin, label: "LinkedIn", href: "" },
+  { icon: SiLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/112546920" },
   { icon: SiInstagram, label: "Instagram", href: "https://www.instagram.com/quantumcusp" },
   { icon: SiFacebook, label: "Facebook", href: "https://www.facebook.com/profile.php?id=61585557312594" },
 ];
@@ -51,7 +51,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6" data-testid="text-footer-tagline">
-              Premier custom software development company delivering AI solutions and deep tech engineering globally.
+              Custom software, AI agents, workflow automation, and SaaS products — built by engineers who care about outcomes.
             </p>
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (
@@ -101,11 +101,11 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:support@quantumcusp.co  "
+                  href="mailto:support@quantumcusp.co"
                   className="text-sm text-gray-400 hover:text-[#FF6632] transition-colors"
                   data-testid="link-footer-email"
                 >
-                  support@quantumcusp.co  
+                  support@quantumcusp.co
                 </a>
               </li>
               <li>
