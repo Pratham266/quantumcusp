@@ -1,4 +1,5 @@
 import { Link, useParams, useLocation } from "wouter";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -42,8 +43,27 @@ export default function CaseStudyDetail() {
     setLocation("/estimator");
   };
 
+  const studyUrl = `https://quantumcusp.co/testimonials/${study.slug}`;
+  const metaDescription = `${study.client} (${study.industry}): ${study.challenge}`.slice(0, 160);
+
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>{`${study.title} — Case Study | QuantumCusp`}</title>
+        <meta name="description" content={metaDescription} />
+        <link rel="canonical" href={studyUrl} />
+
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={studyUrl} />
+        <meta property="og:title" content={`${study.title} — Case Study | QuantumCusp`} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:site_name" content="QuantumCusp" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${study.title} — Case Study | QuantumCusp`} />
+        <meta name="twitter:description" content={metaDescription} />
+      </Helmet>
+
       <Navigation />
       <main className="pt-20">
         <article className="py-20 lg:py-28">

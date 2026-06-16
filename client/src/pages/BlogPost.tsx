@@ -1,4 +1,5 @@
 import { Link, useParams } from "wouter";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -34,8 +35,45 @@ export default function BlogPost() {
     );
   }
 
+  const postUrl = `https://quantumcusp.co/blog/${post.slug}`;
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.excerpt,
+    "author": { "@type": "Person", "name": post.author },
+    "datePublished": post.publishedAt,
+    "publisher": {
+      "@type": "Organization",
+      "name": "QuantumCusp",
+      "logo": { "@type": "ImageObject", "url": "https://quantumcusp.co/LogoDark.svg" },
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": postUrl },
+  };
+
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>{`${post.title} | QuantumCusp Blog`}</title>
+        <meta name="description" content={post.excerpt} />
+        <link rel="canonical" href={postUrl} />
+        <meta name="author" content={post.author} />
+
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={postUrl} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:site_name" content="QuantumCusp" />
+        <meta property="article:published_time" content={post.publishedAt} />
+        <meta property="article:author" content={post.author} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt} />
+
+        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+      </Helmet>
+
       <Navigation />
       <main className="pt-20">
         <article className="py-20 lg:py-28">
