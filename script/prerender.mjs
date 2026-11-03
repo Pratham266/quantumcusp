@@ -13,6 +13,7 @@ const PORT = 4321;
 const routes = [
   "/",
   "/about-us",
+  "/website-solutions",
   "/testimonials",
   "/testimonials/quimicoexim-digital-transformation",
   "/testimonials/jetcoo-digital-operations-and-leads",

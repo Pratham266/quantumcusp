@@ -28,6 +28,7 @@ const navLinks = [
   // },
   { label: "About", href: "/about-us", isAnchor: false },
   { label: "Services", href: "/#services", isAnchor: true },
+  { label: "Pricing", href: "/website-solutions#pricing", isAnchor: false },
   { label: "Solutions", href: "/#solutions", isAnchor: true },
   { label: "Testimonials", href: "/testimonials", isAnchor: false },
   { label: "Blog", href: "/blog", isAnchor: false },
